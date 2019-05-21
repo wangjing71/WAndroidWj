@@ -46,7 +46,6 @@ public class MainActivity extends BaseActivity {
         wrapper = new HeaderAndFooterWrapper(homePageAdapter);
         mRecyclerView.setAdapter(wrapper);
         refreshLayout.setEnableLoadMore(false);
-        refreshLayout.setEnableOverScrollDrag(true);
     }
 
     @Override
