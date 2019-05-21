@@ -55,8 +55,17 @@ public class MainActivity extends BaseActivity {
     private void initBanner() {
         View banner = LayoutInflater.from(this).inflate(R.layout.home_banner_layout,null,false);
         wrapper.addHeaderView(banner);
-        ViewPager bannerViewPager = banner.findViewById(R.id.id_viewpager);
+        HttpRequestUtils.get("banner/json", new HttpRequestUtils.StringCallBack() {
+            @Override
+            public void onSuccess(String result) {
+                Log.i("====",result);
+            }
 
+            @Override
+            public void onFail() {
+
+            }
+        });
 
     }
 

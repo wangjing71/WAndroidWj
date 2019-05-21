@@ -38,4 +38,6 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-26'
 
     implementation 'com.lzy.net:okgo:3.0.4'
+
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
