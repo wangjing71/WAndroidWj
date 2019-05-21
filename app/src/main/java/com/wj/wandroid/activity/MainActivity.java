@@ -84,6 +84,7 @@ public class MainActivity extends BaseActivity {
                 bannerIndex = bannerBean.getData().size();
                 BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter(MainActivity.this, bannerBean.getData());
                 bannerViewPager.setAdapter(bannerPagerAdapter);
+                bannerViewPager.setCurrentItem(bannerIndex, true);
                 handler.sendEmptyMessageDelayed(0,3000);
             }
 
