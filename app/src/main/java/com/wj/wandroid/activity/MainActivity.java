@@ -1,9 +1,11 @@
 package com.wj.wandroid.activity;
 
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.util.HttpRequestUtils;
@@ -11,7 +13,8 @@ import com.wj.wandroid.util.HttpRequestUtils;
 
 public class MainActivity extends BaseActivity {
 
-    private Button button;
+    private SmartRefreshLayout refreshLayout;
+    private RecyclerView mRecyclerView;
 
     @Override
     protected int setLayoutId() {
@@ -20,7 +23,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        button = findViewById(R.id.button);
     }
 
     @Override
@@ -30,12 +32,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void setEvent() {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                doSomeThing();
-            }
-        });
     }
 
     private void doSomeThing() {
