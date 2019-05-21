@@ -15,8 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.wj.wandroid.activity.MainActivity"
-            android:theme="@style/MyApp">
+        <activity android:name="com.wj.wandroid.activity.SplashActivity"
+            android:theme="@style/MySplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
