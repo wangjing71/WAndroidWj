@@ -56,5 +56,8 @@ public class ImageAdActivity extends BaseActivity {
     }
 
     private void startHomePage(boolean isClick) {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
