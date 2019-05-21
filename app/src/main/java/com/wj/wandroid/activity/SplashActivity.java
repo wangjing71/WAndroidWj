@@ -18,6 +18,7 @@ public class SplashActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             Intent intent = new Intent(SplashActivity.this,ImageAdActivity.class);
             startActivity(intent);
+            finish();
         }
     };
 
