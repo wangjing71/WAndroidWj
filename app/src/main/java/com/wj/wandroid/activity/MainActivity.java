@@ -17,6 +17,7 @@ import com.wj.wandroid.adapter.HomePageAdapter;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.BannerBean;
 import com.wj.wandroid.util.HttpRequestUtils;
+import com.wj.wandroid.view.ViewPagerScroller;
 
 
 public class MainActivity extends BaseActivity {
@@ -80,6 +81,9 @@ public class MainActivity extends BaseActivity {
                 Log.i("====", result);
                 BannerBean bannerBean = gson.fromJson(result, BannerBean.class);
                 bannerIndex = bannerBean.getData().size() * 10;
+                ViewPagerScroller scroller = new ViewPagerScroller(MainActivity.this);
+                scroller.setScrollDuration(1500);
+                scroller.initViewPagerScroll(bannerViewPager);
                 BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter(MainActivity.this, bannerBean.getData());
                 bannerViewPager.setAdapter(bannerPagerAdapter);
                 bannerViewPager.setCurrentItem(bannerIndex, true);
