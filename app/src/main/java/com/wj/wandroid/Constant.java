@@ -6,5 +6,5 @@ package com.wj.wandroid;
  * Description
  */
 public class Constant {
-    public static final String HOST_URL = "https://www.wanandroid.com";
+    public static final String HOST_URL = "https://www.wanandroid.com/";
 }
