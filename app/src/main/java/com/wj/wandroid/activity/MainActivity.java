@@ -3,6 +3,7 @@ package com.wj.wandroid.activity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
@@ -46,6 +47,15 @@ public class MainActivity extends BaseActivity {
         wrapper = new HeaderAndFooterWrapper(homePageAdapter);
         mRecyclerView.setAdapter(wrapper);
         refreshLayout.setEnableLoadMore(false);
+
+        initBanner();
+    }
+
+    private void initBanner() {
+        View banner = LayoutInflater.from(this).inflate(R.layout.home_banner_layout,null,false);
+        wrapper.addHeaderView(banner);
+
+
     }
 
     @Override
