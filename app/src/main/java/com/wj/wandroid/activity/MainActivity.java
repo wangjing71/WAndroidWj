@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            if(msg.what == 0){
+            if (msg.what == 0) {
                 bannerIndex++;
                 bannerViewPager.setCurrentItem(bannerIndex, true);
                 handler.removeMessages(0);
@@ -73,19 +73,19 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initBanner() {
-        View banner = LayoutInflater.from(this).inflate(R.layout.home_banner_layout,null,false);
+        View banner = LayoutInflater.from(this).inflate(R.layout.home_banner_layout, null, false);
         wrapper.addHeaderView(banner);
         bannerViewPager = banner.findViewById(R.id.id_viewpager);
         HttpRequestUtils.get("banner/json", new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
-                Log.i("====",result);
-                BannerBean bannerBean = gson.fromJson(result,BannerBean.class);
-                bannerIndex = bannerBean.getData().size();
+                Log.i("====", result);
+                BannerBean bannerBean = gson.fromJson(result, BannerBean.class);
+                bannerIndex = bannerBean.getData().size() * 10;
                 BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter(MainActivity.this, bannerBean.getData());
                 bannerViewPager.setAdapter(bannerPagerAdapter);
                 bannerViewPager.setCurrentItem(bannerIndex, true);
-                handler.sendEmptyMessageDelayed(0,3000);
+                handler.sendEmptyMessageDelayed(0, 3000);
             }
 
             @Override
