@@ -6,8 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.wj.wandroid.R;
+import com.wj.wandroid.bean.HomeListBean;
+
+import java.util.List;
 
 
 /**
@@ -17,6 +21,11 @@ import com.wj.wandroid.R;
  */
 public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
+    private List<HomeListBean.DataBean.DatasBean> datasBeanList;
+
+    public void setDatasBeanList(List<HomeListBean.DataBean.DatasBean> datasBeanList) {
+        this.datasBeanList = datasBeanList;
+    }
 
     public HomePageAdapter(Context context) {
         this.context = context;
@@ -40,10 +49,17 @@ public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     class MineItemViewHolder extends RecyclerView.ViewHolder {
-        private ImageView childItem;
+        private TextView author;
+        private TextView time;
+        private TextView title;
+        private TextView menu;
 
         public MineItemViewHolder(View view) {
             super(view);
+            author = view.findViewById(R.id.auther);
+            time = view.findViewById(R.id.time);
+            title = view.findViewById(R.id.title);
+            menu = view.findViewById(R.id.menu);
         }
     }
 }

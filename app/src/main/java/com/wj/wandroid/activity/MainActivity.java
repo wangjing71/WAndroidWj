@@ -16,8 +16,11 @@ import com.wj.wandroid.adapter.HeaderAndFooterWrapper;
 import com.wj.wandroid.adapter.HomePageAdapter;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.BannerBean;
+import com.wj.wandroid.bean.HomeListBean;
 import com.wj.wandroid.util.HttpRequestUtils;
 import com.wj.wandroid.view.ViewPagerScroller;
+
+import java.util.List;
 
 
 public class MainActivity extends BaseActivity {
@@ -82,7 +85,9 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onSuccess(String result) {
                 Log.i("====",result);
-
+                HomeListBean homeListBean = gson.fromJson(result, HomeListBean.class);
+                List<HomeListBean.DataBean.DatasBean> dat = homeListBean.getData().getDatas();
+                homePageAdapter.setDatasBeanList(dat);
             }
 
             @Override
