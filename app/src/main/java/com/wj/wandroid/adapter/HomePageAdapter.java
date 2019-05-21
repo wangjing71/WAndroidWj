@@ -41,11 +41,20 @@ public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         MineItemViewHolder mineItemViewHolder = (MineItemViewHolder) holder;
+        HomeListBean.DataBean.DatasBean itemBean = datasBeanList.get(position);
+        mineItemViewHolder.time.setText(itemBean.getNiceDate());
+        mineItemViewHolder.author.setText(itemBean.getAuthor());
+        mineItemViewHolder.title.setText(itemBean.getTitle());
+        mineItemViewHolder.menu.setText(itemBean.getSuperChapterName());
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        if(datasBeanList == null){
+            return 0;
+        }else{
+            return datasBeanList.size();
+        }
     }
 
     class MineItemViewHolder extends RecyclerView.ViewHolder {
