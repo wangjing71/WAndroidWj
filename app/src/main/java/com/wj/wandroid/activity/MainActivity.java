@@ -1,5 +1,8 @@
 package com.wj.wandroid.activity;
 
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,6 +28,21 @@ public class MainActivity extends BaseActivity {
 
     private HomePageAdapter homePageAdapter;
     private HeaderAndFooterWrapper wrapper;
+
+    private ViewPager bannerViewPager;
+    private int bannerIndex = 0;
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if(msg.what == 0){
+                bannerIndex++;
+                bannerViewPager.setCurrentItem(bannerIndex, true);
+                handler.removeMessages(0);
+                handler.sendEmptyMessageDelayed(0, 3000);
+            }
+        }
+    };
 
     @Override
     protected int setLayoutId() {
@@ -57,14 +75,16 @@ public class MainActivity extends BaseActivity {
     private void initBanner() {
         View banner = LayoutInflater.from(this).inflate(R.layout.home_banner_layout,null,false);
         wrapper.addHeaderView(banner);
-        final ViewPager bannerViewPager = banner.findViewById(R.id.id_viewpager);
+        bannerViewPager = banner.findViewById(R.id.id_viewpager);
         HttpRequestUtils.get("banner/json", new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
                 Log.i("====",result);
                 BannerBean bannerBean = gson.fromJson(result,BannerBean.class);
+                bannerIndex = bannerBean.getData().size();
                 BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter(MainActivity.this, bannerBean.getData());
                 bannerViewPager.setAdapter(bannerPagerAdapter);
+                handler.sendEmptyMessageDelayed(0,3000);
             }
 
             @Override
@@ -79,17 +99,4 @@ public class MainActivity extends BaseActivity {
     protected void setEvent() {
     }
 
-    private void doSomeThing() {
-        HttpRequestUtils.get("banner/json", new HttpRequestUtils.StringCallBack() {
-            @Override
-            public void onSuccess(String result) {
-
-            }
-
-            @Override
-            public void onFail() {
-
-            }
-        });
-    }
 }
