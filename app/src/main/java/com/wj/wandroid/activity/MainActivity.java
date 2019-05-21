@@ -81,6 +81,7 @@ public class MainActivity extends BaseActivity {
         HttpRequestUtils.get("article/list/"+pageIndex+"/json", new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
+                Log.i("====",result);
 
             }
 
