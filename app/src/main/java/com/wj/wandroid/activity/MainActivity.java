@@ -92,6 +92,26 @@ public class MainActivity extends BaseActivity {
                 bannerViewPager.setAdapter(bannerPagerAdapter);
                 bannerViewPager.setCurrentItem(bannerIndex, true);
                 handler.sendEmptyMessageDelayed(0, 3000);
+                bannerViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+                    }
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+                        if (state == 1) {
+                            handler.removeMessages(0);
+                        } else if (state == 2) {
+                            handler.sendEmptyMessageDelayed(0, 3000);
+                        }
+                    }
+                });
+
             }
 
             @Override
