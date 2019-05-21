@@ -1,5 +1,6 @@
 package com.wj.wandroid.activity;
 
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -54,6 +55,7 @@ public class MainActivity extends BaseActivity {
     private void initBanner() {
         View banner = LayoutInflater.from(this).inflate(R.layout.home_banner_layout,null,false);
         wrapper.addHeaderView(banner);
+        ViewPager bannerViewPager = banner.findViewById(R.id.id_viewpager);
 
 
     }
