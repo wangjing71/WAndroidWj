@@ -38,6 +38,7 @@ public class SplashActivity extends BaseActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void initData() {
+
     }
 
     @Override
