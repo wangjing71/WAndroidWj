@@ -30,6 +30,7 @@ public class MainActivity extends BaseActivity {
 
     private ViewPager bannerViewPager;
     private int bannerIndex = 0;
+    private int pageIndex = 0;
 
     private Handler handler = new Handler() {
         @Override
@@ -73,6 +74,21 @@ public class MainActivity extends BaseActivity {
 
     private void doReflush() {
         initBanner();
+        initHomeList();
+    }
+
+    private void initHomeList() {
+        HttpRequestUtils.get("article/list/"+pageIndex+"/json", new HttpRequestUtils.StringCallBack() {
+            @Override
+            public void onSuccess(String result) {
+
+            }
+
+            @Override
+            public void onFail() {
+
+            }
+        });
     }
 
     private void initBanner() {
