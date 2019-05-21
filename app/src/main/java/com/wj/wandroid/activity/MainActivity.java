@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.wj.wandroid.R;
+import com.wj.wandroid.adapter.HeaderAndFooterWrapper;
+import com.wj.wandroid.adapter.HomePageAdapter;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.util.HttpRequestUtils;
 
@@ -16,6 +18,9 @@ public class MainActivity extends BaseActivity {
 
     private SmartRefreshLayout refreshLayout;
     private RecyclerView mRecyclerView;
+
+    private HomePageAdapter homePageAdapter;
+    private HeaderAndFooterWrapper wrapper;
 
     @Override
     protected int setLayoutId() {
@@ -32,6 +37,16 @@ public class MainActivity extends BaseActivity {
     protected void initData() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setNestedScrollingEnabled(false);
+        mRecyclerView.setItemAnimator(null);
+
+        homePageAdapter = new HomePageAdapter(this);
+        homePageAdapter.setHasStableIds(true);
+
+        wrapper = new HeaderAndFooterWrapper(homePageAdapter);
+        mRecyclerView.setAdapter(wrapper);
+        refreshLayout.setEnableLoadMore(false);
+        refreshLayout.setEnableOverScrollDrag(true);
     }
 
     @Override
