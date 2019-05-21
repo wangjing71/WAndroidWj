@@ -10,9 +10,11 @@ import android.widget.Button;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.wj.wandroid.R;
+import com.wj.wandroid.adapter.BannerPagerAdapter;
 import com.wj.wandroid.adapter.HeaderAndFooterWrapper;
 import com.wj.wandroid.adapter.HomePageAdapter;
 import com.wj.wandroid.base.BaseActivity;
+import com.wj.wandroid.bean.BannerBean;
 import com.wj.wandroid.util.HttpRequestUtils;
 
 
@@ -55,10 +57,14 @@ public class MainActivity extends BaseActivity {
     private void initBanner() {
         View banner = LayoutInflater.from(this).inflate(R.layout.home_banner_layout,null,false);
         wrapper.addHeaderView(banner);
+        final ViewPager bannerViewPager = banner.findViewById(R.id.id_viewpager);
         HttpRequestUtils.get("banner/json", new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
                 Log.i("====",result);
+                BannerBean bannerBean = gson.fromJson(result,BannerBean.class);
+                BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter(MainActivity.this, bannerBean.getData());
+                bannerViewPager.setAdapter(bannerPagerAdapter);
             }
 
             @Override
@@ -77,7 +83,7 @@ public class MainActivity extends BaseActivity {
         HttpRequestUtils.get("banner/json", new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
-                Log.i("====",result);
+
             }
 
             @Override

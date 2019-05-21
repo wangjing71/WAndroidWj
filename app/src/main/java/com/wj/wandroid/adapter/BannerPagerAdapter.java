@@ -8,9 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.wj.wandroid.R;
+import com.wj.wandroid.bean.BannerBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * author wangjing
@@ -19,11 +22,11 @@ import java.util.ArrayList;
  */
 public class BannerPagerAdapter extends PagerAdapter {
 
-    private ArrayList<String> urlDatas;
+    private List<BannerBean.DataBean> urlDatas;
     private Context context;
     private onBannerItemClick onBannerItemClick;
 
-    public BannerPagerAdapter(Context context, ArrayList<String> urlDatas) {
+    public BannerPagerAdapter(Context context, List<BannerBean.DataBean> urlDatas) {
         this.context = context;
         this.urlDatas = urlDatas;
     }
@@ -33,6 +36,7 @@ public class BannerPagerAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         View item = LayoutInflater.from(context).inflate(R.layout.home_banner_item,null,false);
         ImageView iv = item.findViewById(R.id.item_mz_banner_adapter_iv);
+        Glide.with(context).load(urlDatas.get(position).getImagePath()).into(iv);
         item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

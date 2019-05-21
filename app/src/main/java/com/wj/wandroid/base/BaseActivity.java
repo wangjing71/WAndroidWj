@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.google.gson.Gson;
 import com.gyf.immersionbar.ImmersionBar;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wj.wandroid.R;
@@ -19,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected RxPermissions rxPermissions;
     private View barView;
+    public Gson gson = new Gson();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
