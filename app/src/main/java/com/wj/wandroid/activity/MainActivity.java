@@ -100,6 +100,7 @@ public class MainActivity extends BaseActivity {
 
                     @Override
                     public void onPageSelected(int position) {
+                        bannerIndex = position;
                     }
 
                     @Override

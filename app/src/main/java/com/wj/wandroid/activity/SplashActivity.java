@@ -2,10 +2,8 @@ package com.wj.wandroid.activity;
 
 import android.Manifest;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.RequiresApi;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
