@@ -1,5 +1,6 @@
 package com.wj.wandroid.activity;
 
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -23,11 +24,14 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        mRecyclerView = findViewById(R.id.recyclerView_market);
+        refreshLayout = findViewById(R.id.refreshLayout);
     }
 
     @Override
     protected void initData() {
-
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
     }
 
     @Override
