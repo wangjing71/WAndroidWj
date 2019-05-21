@@ -68,6 +68,10 @@ public class MainActivity extends BaseActivity {
         mRecyclerView.setAdapter(wrapper);
         refreshLayout.setEnableLoadMore(false);
 
+        doReflush();
+    }
+
+    private void doReflush() {
         initBanner();
     }
 
