@@ -37,12 +37,6 @@ public class BannerPagerAdapter extends PagerAdapter {
         View item = LayoutInflater.from(context).inflate(R.layout.home_banner_item,null,false);
         ImageView iv = item.findViewById(R.id.item_mz_banner_adapter_iv);
         Glide.with(context).load(urlDatas.get(position).getImagePath()).into(iv);
-        item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBannerItemClick.itemClick(position % urlDatas.size());
-            }
-        });
         container.addView(item);
         return item;
     }
