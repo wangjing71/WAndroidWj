@@ -1,10 +1,12 @@
 package com.wj.wandroid.activity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
+import com.wj.wandroid.util.HttpRequestUtils;
 
 
 public class MainActivity extends BaseActivity {
@@ -37,6 +39,16 @@ public class MainActivity extends BaseActivity {
     }
 
     private void doSomeThing() {
+        HttpRequestUtils.get("banner/json", new HttpRequestUtils.StringCallBack() {
+            @Override
+            public void onSuccess(String result) {
+                Log.i("====",result);
+            }
 
+            @Override
+            public void onFail() {
+
+            }
+        });
     }
 }

@@ -23,13 +23,12 @@ public class HttpRequestUtils {
         void onFail();
     }
 
-    public static void get(Context context, String path, final StringCallBack callback) {
+    public static void get(String path, final StringCallBack callback) {
         OkGo.<String>get(Constant.HOST_URL + path)                            // 请求方式和请求url
                 .cacheMode(CacheMode.DEFAULT)    // 缓存模式，详细请看缓存介绍
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
-                        Log.i("====", response.body());
                         callback.onSuccess(response.body());
                     }
 
