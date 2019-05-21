@@ -53,7 +53,6 @@ public class ImageAdActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        doGet();
     }
 
     @Override
@@ -69,32 +68,4 @@ public class ImageAdActivity extends BaseActivity {
     }
 
 
-    private void doGet() {
-        OkGo.<String>get("http://www.baidu.com")                            // 请求方式和请求url
-                .tag(this)                       // 请求的 tag, 主要用于取消对应的请求
-                .cacheKey("cacheKey")            // 设置当前请求的缓存key,建议每个不同功能的请求设置一个
-                .cacheMode(CacheMode.DEFAULT)    // 缓存模式，详细请看缓存介绍
-                .execute(new StringCallback() {
-                    @Override
-                    public void onSuccess(Response<String> response) {
-                        Log.i("====",response.body());
-                    }
-                });
-    }
-
-    private void doPost() {
-        OkGo.<String>post("http://www.baidu.com")
-                .tag(this)
-                .cacheKey("cachePostKey")
-                .cacheMode(CacheMode.DEFAULT)
-                .params("param2", "paramValue2")
-                .params("param3", "paramValue3")
-                .execute(new StringCallback() {
-                    @Override
-                    public void onSuccess(Response<String> response) {
-                        Log.i("====",response.body());
-
-                    }
-                });
-    }
 }

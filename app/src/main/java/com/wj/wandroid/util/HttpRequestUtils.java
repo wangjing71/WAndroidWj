@@ -40,4 +40,21 @@ public class HttpRequestUtils {
                     }
                 });
     }
+
+
+    private void doPost() {
+        OkGo.<String>post("http://www.baidu.com")
+                .tag(this)
+                .cacheKey("cachePostKey")
+                .cacheMode(CacheMode.DEFAULT)
+                .params("param2", "paramValue2")
+                .params("param3", "paramValue3")
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        Log.i("====",response.body());
+
+                    }
+                });
+    }
 }
