@@ -56,6 +56,7 @@ public class ImageAdActivity extends BaseActivity {
     }
 
     private void startHomePage(boolean isClick) {
+        handler.removeMessages(0);
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
         finish();
