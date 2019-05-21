@@ -36,7 +36,7 @@ public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 10;
     }
 
     class MineItemViewHolder extends RecyclerView.ViewHolder {
