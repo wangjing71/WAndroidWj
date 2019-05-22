@@ -51,23 +51,26 @@ public class WebActivity extends BaseActivity {
 
     private void initWebView(WebView webView) {
 
+
+
+
+
+
+        WebSettings webSettings = webView.getSettings();
+
 //        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 //        webSettings.setSupportZoom(true);
 //        webSettings.setAllowFileAccess(true);
 //        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 //
-//        webSettings.setUseWideViewPort(true);
-//        webSettings.setLoadWithOverviewMode(true);
-//        String ua = webSettings.getUserAgentString();
-//        webSettings.setDatabaseEnabled(true);
-//        String dir = getApplicationContext()
-//                .getDir("database", Context.MODE_PRIVATE).getPath();
-//        webSettings.setGeolocationDatabasePath(dir);
-//        webSettings.setGeolocationEnabled(true);
-
-
-
-        WebSettings webSettings = webView.getSettings();
+        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(true);
+        String ua = webSettings.getUserAgentString();
+        webSettings.setDatabaseEnabled(true);
+        String dir = getApplicationContext()
+                .getDir("database", Context.MODE_PRIVATE).getPath();
+        webSettings.setGeolocationDatabasePath(dir);
+        webSettings.setGeolocationEnabled(true);
         webSettings.setBlockNetworkImage(false);
         webSettings.setMediaPlaybackRequiresUserGesture(false);
         webSettings.setDomStorageEnabled(true);
