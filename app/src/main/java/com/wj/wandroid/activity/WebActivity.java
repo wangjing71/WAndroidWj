@@ -39,9 +39,11 @@ public class WebActivity extends BaseActivity {
     @Override
     protected void initData() {
         initWebView(webView);
-        webView.loadUrl("http://www.baidu.com");
-
-
+        Intent intent = getIntent();
+        String titleText = intent.getStringExtra("title");
+        String url = intent.getStringExtra("url");
+        title.setText(titleText);
+        webView.loadUrl(url);
     }
 
     @Override

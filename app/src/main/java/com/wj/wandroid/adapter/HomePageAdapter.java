@@ -44,7 +44,7 @@ public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         MineItemViewHolder mineItemViewHolder = (MineItemViewHolder) holder;
-        HomeListBean.DataBean.DatasBean itemBean = datasBeanList.get(position);
+        final HomeListBean.DataBean.DatasBean itemBean = datasBeanList.get(position);
         mineItemViewHolder.time.setText(itemBean.getNiceDate());
         mineItemViewHolder.author.setText(itemBean.getAuthor());
         mineItemViewHolder.title.setText(itemBean.getTitle());
@@ -53,6 +53,8 @@ public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, WebActivity.class);
+                intent.putExtra("title",itemBean.getTitle());
+                intent.putExtra("url",itemBean.getLink());
                 context.startActivity(intent);
             }
         });
