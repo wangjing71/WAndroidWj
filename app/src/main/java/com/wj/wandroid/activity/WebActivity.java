@@ -50,9 +50,7 @@ public class WebActivity extends BaseActivity {
     }
 
     private void initWebView(WebView webView) {
-//        webSettings.setDomStorageEnabled(true);
-//        webSettings.setBlockNetworkImage(false);
-//        webSettings.setMediaPlaybackRequiresUserGesture(false);
+
 //        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 //        webSettings.setSupportZoom(true);
 //        webSettings.setAllowFileAccess(true);
@@ -70,6 +68,8 @@ public class WebActivity extends BaseActivity {
 
 
         WebSettings webSettings = webView.getSettings();
+        webSettings.setBlockNetworkImage(false);
+        webSettings.setMediaPlaybackRequiresUserGesture(false);
         webSettings.setDomStorageEnabled(true);
         webSettings.setDefaultTextEncodingName("UTF-8");
         webSettings.setJavaScriptEnabled(true);
