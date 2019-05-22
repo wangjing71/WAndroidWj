@@ -2,6 +2,7 @@ package com.wj.wandroid.activity;
 
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.BannerPagerAdapter;
 import com.wj.wandroid.adapter.HeaderAndFooterWrapper;
@@ -72,8 +76,6 @@ public class MainActivity extends BaseActivity {
         homePageAdapter.setDatasBeanList(datasBeanList);
         wrapper = new HeaderAndFooterWrapper(homePageAdapter);
         mRecyclerView.setAdapter(wrapper);
-        refreshLayout.setEnableLoadMore(false);
-
         doReflush();
     }
 
@@ -83,10 +85,10 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initHomeList() {
-        HttpRequestUtils.get("article/list/"+pageIndex+"/json", new HttpRequestUtils.StringCallBack() {
+        HttpRequestUtils.get("article/list/" + pageIndex + "/json", new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
-                Log.i("====",result);
+                Log.i("====", result);
                 HomeListBean homeListBean = gson.fromJson(result, HomeListBean.class);
                 List<HomeListBean.DataBean.DatasBean> dat = homeListBean.getData().getDatas();
                 datasBeanList.addAll(dat);
@@ -151,6 +153,23 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void setEvent() {
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                pageIndex = 0;
+                datasBeanList.clear();
+                initHomeList();
+                refreshLayout.finishRefresh();
+            }
+        });
+
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                initHomeList();
+                refreshLayout.finishLoadMore();
+            }
+        });
     }
 
 }
