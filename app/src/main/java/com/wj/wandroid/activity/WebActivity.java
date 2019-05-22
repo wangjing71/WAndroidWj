@@ -52,8 +52,7 @@ public class WebActivity extends BaseActivity {
     private void initWebView(WebView webView) {
 
 
-//        webSettings.setSupportZoom(true);
-//        webSettings.setAllowFileAccess(true);
+
 //        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 //
 //        webSettings.setUseWideViewPort(true);
@@ -61,12 +60,12 @@ public class WebActivity extends BaseActivity {
 //        String ua = webSettings.getUserAgentString();
 //        webSettings.setDatabaseEnabled(true);
 
-//
-//
 
 
 
         WebSettings webSettings = webView.getSettings();
+        webSettings.setSupportZoom(true);
+        webSettings.setAllowFileAccess(true);
         String dir = getApplicationContext()
                 .getDir("database", Context.MODE_PRIVATE).getPath();
         webSettings.setGeolocationDatabasePath(dir);
