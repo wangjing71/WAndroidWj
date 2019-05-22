@@ -20,6 +20,7 @@ import com.wj.wandroid.bean.HomeListBean;
 import com.wj.wandroid.util.HttpRequestUtils;
 import com.wj.wandroid.view.ViewPagerScroller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -34,6 +35,7 @@ public class MainActivity extends BaseActivity {
     private ViewPager bannerViewPager;
     private int bannerIndex = 0;
     private int pageIndex = 0;
+    private List<HomeListBean.DataBean.DatasBean> datasBeanList = new ArrayList<>();
 
     private Handler handler = new Handler() {
         @Override
@@ -67,7 +69,7 @@ public class MainActivity extends BaseActivity {
 
         homePageAdapter = new HomePageAdapter(this);
         homePageAdapter.setHasStableIds(true);
-
+        homePageAdapter.setDatasBeanList(datasBeanList);
         wrapper = new HeaderAndFooterWrapper(homePageAdapter);
         mRecyclerView.setAdapter(wrapper);
         refreshLayout.setEnableLoadMore(false);
@@ -87,7 +89,9 @@ public class MainActivity extends BaseActivity {
                 Log.i("====",result);
                 HomeListBean homeListBean = gson.fromJson(result, HomeListBean.class);
                 List<HomeListBean.DataBean.DatasBean> dat = homeListBean.getData().getDatas();
-                homePageAdapter.setDatasBeanList(dat);
+                datasBeanList.addAll(dat);
+                homePageAdapter.notifyDataSetChanged();
+                pageIndex++;
             }
 
             @Override
