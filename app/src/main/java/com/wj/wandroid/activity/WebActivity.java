@@ -1,5 +1,8 @@
 package com.wj.wandroid.activity;
 
+import android.webkit.WebView;
+import android.widget.TextView;
+
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
 
@@ -9,6 +12,9 @@ import com.wj.wandroid.base.BaseActivity;
  * Description
  */
 public class WebActivity extends BaseActivity {
+    private TextView title;
+    private WebView webView;
+
     @Override
     protected int setLayoutId() {
         return R.layout.activity_web;
@@ -16,7 +22,8 @@ public class WebActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        title = findViewById(R.id.title);
+        webView = findViewById(R.id.webview);
     }
 
     @Override
