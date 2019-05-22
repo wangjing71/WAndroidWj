@@ -1,14 +1,17 @@
 package com.wj.wandroid.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wj.wandroid.R;
+import com.wj.wandroid.activity.WebActivity;
 import com.wj.wandroid.bean.HomeListBean;
 
 import java.util.List;
@@ -46,6 +49,13 @@ public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         mineItemViewHolder.author.setText(itemBean.getAuthor());
         mineItemViewHolder.title.setText(itemBean.getTitle());
         mineItemViewHolder.menu.setText(itemBean.getSuperChapterName());
+        mineItemViewHolder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, WebActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -62,6 +72,7 @@ public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private TextView time;
         private TextView title;
         private TextView menu;
+        private LinearLayout parent;
 
         public MineItemViewHolder(View view) {
             super(view);
@@ -69,6 +80,7 @@ public class HomePageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             time = view.findViewById(R.id.time);
             title = view.findViewById(R.id.title);
             menu = view.findViewById(R.id.menu);
+            parent = view.findViewById(R.id.parent);
         }
     }
 }

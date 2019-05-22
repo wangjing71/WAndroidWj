@@ -26,7 +26,7 @@
 
         <activity android:name=".activity.ImageAdActivity"/>
         <activity android:name=".activity.MainActivity"/>
-
+        <activity android:name=".activity.WebActivity"/>
     </application>
 
 </manifest>
