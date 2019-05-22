@@ -50,8 +50,18 @@ public class WebActivity extends BaseActivity {
     }
 
     private void initWebView(WebView webView) {
-
         WebSettings webSettings = webView.getSettings();
+
+        webSettings.setDatabaseEnabled(true);
+        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        String dir = getApplicationContext()
+                .getDir("database", Context.MODE_PRIVATE).getPath();
+        webSettings.setGeolocationDatabasePath(dir);
+        webSettings.setGeolocationEnabled(true);
+        webSettings.setBlockNetworkImage(false);
+        webSettings.setMediaPlaybackRequiresUserGesture(false);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setDefaultTextEncodingName("UTF-8");
         webSettings.setJavaScriptEnabled(true);
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setSupportZoom(true);
@@ -63,7 +73,13 @@ public class WebActivity extends BaseActivity {
         webSettings.setLoadWithOverviewMode(true);
         webView.setWebViewClient(new WebViewClient());
         webView.setInitialScale(100);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            webSettings.setAllowFileAccessFromFileURLs(false);
+            webSettings.setAllowUniversalAccessFromFileURLs(false);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
         webView.setWebChromeClient(new WebChromeClient() {
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
