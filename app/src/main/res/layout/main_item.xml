@@ -36,7 +36,7 @@
         android:layout_marginLeft="@dimen/dp_10"
         android:text="title"
         android:textColor="@color/black"
-        android:textSize="@dimen/sp_18" />
+        android:textSize="@dimen/sp_17" />
 
     <TextView
         android:layout_marginTop="@dimen/dp_5"
