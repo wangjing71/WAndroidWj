@@ -1,7 +1,9 @@
 package com.wj.wandroid.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
@@ -73,12 +75,32 @@ public class WebActivity extends BaseActivity {
                 .getDir("database", Context.MODE_PRIVATE).getPath();
         webSettings.setGeolocationDatabasePath(dir);
         webSettings.setGeolocationEnabled(true);
-        webView.setWebViewClient(new WebViewClient(){
+        WebViewClient webViewClient = new WebViewClient() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                return super.shouldOverrideUrlLoading(view, request);
+            public boolean shouldOverrideUrlLoading(WebView wv, String url) {
+                if(url == null) return false;
+                try {
+                    if(url.startsWith("weixin://") //微信
+                            || url.startsWith("alipays://") //支付宝
+                            || url.startsWith("mailto://") //邮件
+                            || url.startsWith("tel://")//电话
+                            || url.startsWith("dianping://")//大众点评
+                        //其他自定义的scheme
+                    ) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                        startActivity(intent);
+                        return true;
+                    }
+                } catch (Exception e) { //防止crash (如果手机上没有安装处理某个scheme开头的url的APP, 会导致crash)
+                    return true;//没有安装该app时，返回true，表示拦截自定义链接，但不跳转，避免弹出上面的错误页面
+                }
+
+                //处理http和https开头的url
+                wv.loadUrl(url);
+                return true;
             }
-        });
+        };
+        webView.setWebViewClient(webViewClient);
         webView.setWebChromeClient(new WebChromeClient() {
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
