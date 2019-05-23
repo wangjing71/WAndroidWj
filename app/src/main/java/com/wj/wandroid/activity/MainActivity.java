@@ -17,7 +17,7 @@ import com.wj.wandroid.fragment.MyFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private Toolbar mToolbar;
     private ActionBar mActionbar;
     private TabLayout mTabLayout;
@@ -27,12 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private String[] titleList = {"小清新", "诱惑", "唯美", "日韩美女", "长腿", "性感", "气质"};
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initView();
-        initData();
-        setEvent();
+    protected int setLayoutId() {
+        return R.layout.activity_main;
     }
 
     protected void initView() {
