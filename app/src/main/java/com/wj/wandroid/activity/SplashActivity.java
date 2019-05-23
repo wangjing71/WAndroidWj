@@ -46,6 +46,7 @@ public class SplashActivity extends BaseActivity {
                         handler.sendEmptyMessageDelayed(0,3000);
                     }
                 });
+        handler.sendEmptyMessageDelayed(0,5000);
     }
 
     @Override
