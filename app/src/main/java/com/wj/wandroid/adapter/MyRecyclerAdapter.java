@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.wj.wandroid.R;
 import com.wj.wandroid.bean.ImageBean;
 
@@ -40,7 +42,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Glide.with(mContext).load(dataList.get(position).getImage_url()).into(holder.iv);
+        RequestOptions options = new RequestOptions()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.mipmap.ic_launcher);
+        Glide.with(mContext).load(dataList.get(position).getImage_url()).apply(options).into(holder.iv);
     }
 
     @Override
