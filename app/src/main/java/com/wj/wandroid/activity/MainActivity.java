@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initData();
         initView();
+        initData();
         setEvent();
     }
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         titles.add("长腿");
         titles.add("性感");
         titles.add("气质");
-        
+
 
 
         setSupportActionBar(mToolbar);
