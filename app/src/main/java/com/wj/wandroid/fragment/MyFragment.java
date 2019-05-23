@@ -38,6 +38,7 @@ public class MyFragment extends Fragment {
     private Gson gson = new Gson();
     private List<ImageBean.DataBean> dataList = new ArrayList<>();
     private MyRecyclerAdapter myRecyclerAdapter;
+    private int pageIndex = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class MyFragment extends Fragment {
         myRecyclerAdapter = new MyRecyclerAdapter(getContext());
         myRecyclerAdapter.setDataList(dataList);
         mRecyclerView.setAdapter(myRecyclerAdapter);
+        initHomeList();
     }
 
     private void setEvent() {
@@ -84,13 +86,14 @@ public class MyFragment extends Fragment {
     }
 
     private void initHomeList() {
-        HttpRequestUtils.get(Constant.SPLASH_IMAGE, new HttpRequestUtils.StringCallBack() {
+        HttpRequestUtils.get(Constant.SPLASH_IMAGE.replaceAll("%number",pageIndex+""), new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 List<ImageBean.DataBean> data = imageBean.getData();
                 dataList.addAll(data);
                 myRecyclerAdapter.notifyDataSetChanged();
+                pageIndex++;
             }
 
             @Override
