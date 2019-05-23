@@ -1,9 +1,12 @@
 package com.wj.wandroid.activity;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.wj.wandroid.R;
@@ -14,7 +17,7 @@ import com.wj.wandroid.fragment.MyFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private ActionBar mActionbar;
     private TabLayout mTabLayout;
@@ -24,18 +27,20 @@ public class MainActivity extends BaseActivity {
     private String[] titleList = {"小清新", "诱惑", "唯美", "日韩美女", "长腿", "性感", "气质"};
 
     @Override
-    protected int setLayoutId() {
-        return R.layout.activity_main;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initData();
+        initView();
+        setEvent();
     }
 
-    @Override
     protected void initView() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mTabLayout = (TabLayout) findViewById(R.id.tablayout);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
     }
 
-    @Override
     protected void initData() {
         titles.add("电影");
         titles.add("电视剧");
@@ -58,7 +63,6 @@ public class MainActivity extends BaseActivity {
         mTabLayout.setupWithViewPager(mViewPager);
     }
 
-    @Override
     protected void setEvent() {
 
     }
