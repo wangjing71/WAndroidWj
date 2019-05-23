@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.wj.wandroid.R;
@@ -16,7 +17,7 @@ import com.wj.wandroid.fragment.MyFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private ActionBar mActionbar;
     private TabLayout mTabLayout;
@@ -26,8 +27,12 @@ public class MainActivity extends BaseActivity {
     private String[] titleList = {"小清新", "诱惑", "唯美", "日韩美女", "长腿", "性感", "气质"};
 
     @Override
-    protected int setLayoutId() {
-        return R.layout.activity_main;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initView();
+        initData();
+        setEvent();
     }
 
     protected void initView() {
