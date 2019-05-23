@@ -49,13 +49,7 @@ public class MainActivity extends AppCompatActivity {
         titles.add("长腿");
         titles.add("性感");
         titles.add("气质");
-        titles.add("小清新");
-        titles.add("诱惑");
-        titles.add("唯美");
-        titles.add("日韩美女");
-        titles.add("长腿");
-        titles.add("性感");
-        titles.add("气质");
+        
 
 
         setSupportActionBar(mToolbar);
