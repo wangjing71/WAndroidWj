@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +90,9 @@ public class MyFragment extends Fragment {
     }
 
     private void initHomeList() {
-        HttpRequestUtils.get(Constant.SPLASH_IMAGE.replaceAll("%number",pageIndex+"").replaceAll("%type",type), new HttpRequestUtils.StringCallBack() {
+        String url = Constant.SPLASH_IMAGE.replaceAll("%number",pageIndex+"").replaceAll("%type",type);
+        Log.i("====",url);
+        HttpRequestUtils.get(url, new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
