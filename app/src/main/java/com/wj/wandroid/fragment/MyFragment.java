@@ -18,28 +18,24 @@ import com.wj.wandroid.adapter.MyRecyclerAdapter;
 public class MyFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_tablayout,null,false);
+        View view = inflater.inflate(R.layout.fragment_tablayout,null,false);
         initView(view);
         initData();
         setEvent();
-
-        mRecyclerView = view.findViewById(R.id.recyclerView);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.setAdapter(new MyRecyclerAdapter(getContext()));
         return view;
     }
 
 
     private void initView(View root) {
-
+        mRecyclerView = root.findViewById(R.id.recyclerView);
     }
 
     private void initData() {
-
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.setAdapter(new MyRecyclerAdapter(getContext()));
     }
 
     private void setEvent() {
