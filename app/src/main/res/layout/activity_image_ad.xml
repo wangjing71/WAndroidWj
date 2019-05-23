@@ -38,5 +38,4 @@
             android:text="跳过"
             android:textColor="@color/black" />
     </LinearLayout>
-
 </RelativeLayout>
