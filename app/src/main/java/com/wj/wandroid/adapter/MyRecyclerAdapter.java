@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -30,25 +31,25 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mllAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext, "总会有一个人让你想拼了命的努力变好！", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        holder.mllAll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(mContext, "总会有一个人让你想拼了命的努力变好！", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
-        return 16;
+        return 200;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout mllAll;
+        ImageView iv;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mllAll = (LinearLayout) itemView.findViewById(R.id.llAll);
+            iv = itemView.findViewById(R.id.iv);
         }
     }
 }
