@@ -69,7 +69,9 @@ public class MyFragment extends Fragment {
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-
+                pageIndex = 0;
+                dataList.clear();
+                initHomeList();
                 refreshLayout.finishRefresh();
             }
         });
@@ -77,9 +79,7 @@ public class MyFragment extends Fragment {
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-
-
-
+                initHomeList();
                 refreshLayout.finishLoadMore();
             }
         });
