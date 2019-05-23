@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyApp">
         <activity android:name="com.wj.wandroid.activity.MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@style/MySplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
