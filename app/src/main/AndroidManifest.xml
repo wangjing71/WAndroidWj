@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyApp">
-        <activity android:name="com.wj.wandroid.activity.SplashActivity"
+        <activity android:name="com.wj.wandroid.activity.ImageAdActivity"
             android:theme="@style/MySplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ImageAdActivity"/>
+        <!--<activity android:name=".activity.ImageAdActivity"/>-->
         <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.WebActivity"/>
     </application>
