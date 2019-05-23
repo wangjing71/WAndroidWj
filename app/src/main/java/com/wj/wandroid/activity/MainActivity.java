@@ -42,9 +42,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initData() {
-        titles.add("电影");
-        titles.add("电视剧");
-        titles.add("综艺");
+        titles.add("小清新");
+        titles.add("诱惑");
+        titles.add("唯美");
+        titles.add("日韩美女");
+        titles.add("长腿");
+        titles.add("性感");
+        titles.add("气质");
+        titles.add("小清新");
+        titles.add("诱惑");
+        titles.add("唯美");
+        titles.add("日韩美女");
+        titles.add("长腿");
+        titles.add("性感");
+        titles.add("气质");
+
 
         setSupportActionBar(mToolbar);
         mActionbar = getSupportActionBar();
