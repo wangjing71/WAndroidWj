@@ -10,6 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.wj.wandroid.R;
+import com.wj.wandroid.bean.ImageBean;
+
+import java.util.List;
 
 /**
  * author: smile .
@@ -18,6 +21,11 @@ import com.wj.wandroid.R;
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
 
     Context mContext;
+    private List<ImageBean.DataBean> dataList;
+
+    public void setDataList(List<ImageBean.DataBean> dataList) {
+        this.dataList = dataList;
+    }
 
     public MyRecyclerAdapter(Context context) {
         this.mContext = context;
