@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.HomeFragmentPager;
 import com.wj.wandroid.base.BaseActivity;
