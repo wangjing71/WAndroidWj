@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(mToolbar);
         mActionbar = getSupportActionBar();
-        mActionbar.setTitle("谦行");
+        mActionbar.setTitle("享受美好生活");
         for (int i = 0; i < titles.size(); i++) {
             mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(i)));
         }
