@@ -10,7 +10,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.wj.wandroid.R;
-import com.wj.wandroid.bean.BannerBean;
 
 import java.util.List;
 

@@ -6,13 +6,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.activity.WebActivity;
-import com.wj.wandroid.bean.HomeListBean;
 
 import java.util.List;
 

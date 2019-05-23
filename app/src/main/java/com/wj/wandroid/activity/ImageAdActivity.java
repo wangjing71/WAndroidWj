@@ -47,6 +47,7 @@ public class ImageAdActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+
     }
 
     @Override
