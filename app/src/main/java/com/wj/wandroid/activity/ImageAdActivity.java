@@ -50,7 +50,6 @@ public class ImageAdActivity extends BaseActivity {
         adImg = findViewById(R.id.ad_img);
         skip = findViewById(R.id.skip);
         skip.setText("跳过 " + time);
-        handler.sendEmptyMessageDelayed(0, 1000);
     }
 
     @Override
@@ -58,6 +57,7 @@ public class ImageAdActivity extends BaseActivity {
         HttpRequestUtils.get(Constant.SPLASH_IMAGE, new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
+                handler.sendEmptyMessageDelayed(0, 1000);
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 int count = imageBean.getData().size();
                 Random r=new Random();
