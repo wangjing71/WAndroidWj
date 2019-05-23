@@ -24,7 +24,7 @@ public class HttpRequestUtils {
     }
 
     public static void get(String path, final StringCallBack callback) {
-        OkGo.<String>get(Constant.HOST_URL + path)                            // 请求方式和请求url
+        OkGo.<String>get(path)                            // 请求方式和请求url
                 .cacheMode(CacheMode.DEFAULT)    // 缓存模式，详细请看缓存介绍
                 .execute(new StringCallback() {
                     @Override

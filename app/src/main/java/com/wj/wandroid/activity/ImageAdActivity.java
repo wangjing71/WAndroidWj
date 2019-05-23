@@ -3,11 +3,14 @@ package com.wj.wandroid.activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.wj.wandroid.Constant;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
+import com.wj.wandroid.util.HttpRequestUtils;
 
 /**
  * author wangjing
@@ -47,7 +50,17 @@ public class ImageAdActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        HttpRequestUtils.get(Constant.SPLASH_IMAGE, new HttpRequestUtils.StringCallBack() {
+            @Override
+            public void onSuccess(String result) {
+                Log.i("====",result);
+            }
 
+            @Override
+            public void onFail() {
+
+            }
+        });
     }
 
     @Override
