@@ -39,6 +39,7 @@ public class MyFragment extends Fragment {
     private List<ImageBean.DataBean> dataList = new ArrayList<>();
     private MyRecyclerAdapter myRecyclerAdapter;
     private int pageIndex = 0;
+    private String type ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,13 +50,15 @@ public class MyFragment extends Fragment {
         return view;
     }
 
-
     private void initView(View root) {
         mRecyclerView = root.findViewById(R.id.recyclerView);
         refreshLayout = root.findViewById(R.id.refreshLayout);
     }
 
     private void initData() {
+        if (getArguments() != null) {
+            type =  getArguments().getString("type");
+        }
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         manager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         mRecyclerView.setLayoutManager(manager);
@@ -86,7 +89,7 @@ public class MyFragment extends Fragment {
     }
 
     private void initHomeList() {
-        HttpRequestUtils.get(Constant.SPLASH_IMAGE.replaceAll("%number",pageIndex+""), new HttpRequestUtils.StringCallBack() {
+        HttpRequestUtils.get(Constant.SPLASH_IMAGE.replaceAll("%number",pageIndex+"").replaceAll("%type",type), new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);

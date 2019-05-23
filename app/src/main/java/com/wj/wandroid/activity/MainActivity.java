@@ -62,7 +62,11 @@ public class MainActivity extends AppCompatActivity {
         }
         List<Fragment> fragments = new ArrayList<Fragment>();
         for (int i = 0; i < titles.size(); i++) {
-            fragments.add(new MyFragment());
+            MyFragment myFragment = new MyFragment();
+            Bundle bundle1 = new Bundle();
+            bundle1.putString("type", titles.get(i));
+            myFragment.setArguments(bundle1);
+            fragments.add(myFragment);
         }
         HomeFragmentPager fragmentPager = new HomeFragmentPager(getSupportFragmentManager(), fragments, titles);
         // 给ViewPager 设置适配器
