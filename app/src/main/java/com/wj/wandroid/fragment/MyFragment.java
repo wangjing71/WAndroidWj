@@ -44,13 +44,4 @@ public class MyFragment extends Fragment {
     private void setEvent() {
 
     }
-
-
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.setAdapter(new MyRecyclerAdapter(getContext()));
-    }
 }
