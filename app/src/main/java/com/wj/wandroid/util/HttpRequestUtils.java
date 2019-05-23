@@ -29,7 +29,6 @@ public class HttpRequestUtils {
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
-                        Log.i("====出参",response.body());
                         callback.onSuccess(response.body());
                     }
 
