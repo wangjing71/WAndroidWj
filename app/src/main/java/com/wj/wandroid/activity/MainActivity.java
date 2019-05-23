@@ -44,15 +44,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initData() {
+        titles.add("嫩萝莉");
+        titles.add("长腿");
         titles.add("小清新");
         titles.add("诱惑");
         titles.add("唯美");
-        titles.add("日韩美女");
-        titles.add("长腿");
+        titles.add("长发");
         titles.add("性感");
         titles.add("气质");
-
-
+        titles.add("可爱");
+        titles.add("素颜");
+        titles.add("非主流");
+        titles.add("车模");
+        titles.add("cosplay");
+        titles.add("写真");
 
         setSupportActionBar(mToolbar);
         mActionbar = getSupportActionBar();
