@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.wj.wandroid.R;
 import com.wj.wandroid.bean.ImageBean;
 
@@ -39,12 +40,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-//        holder.mllAll.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(mContext, "总会有一个人让你想拼了命的努力变好！", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        Glide.with(mContext).load(dataList.get(position).getImage_url()).into(holder.iv);
     }
 
     @Override
