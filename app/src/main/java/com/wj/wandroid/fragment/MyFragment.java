@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
@@ -97,6 +98,7 @@ public class MyFragment extends Fragment {
             public void onSuccess(String result) {
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 List<ImageBean.DataBean> data = imageBean.getData();
+                Toast.makeText(getContext(), data.size()+"", Toast.LENGTH_SHORT).show();
                 dataList.addAll(data);
                 myRecyclerAdapter.notifyDataSetChanged();
                 pageIndex++;
