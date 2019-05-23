@@ -20,7 +20,7 @@ import com.wj.wandroid.util.HttpRequestUtils;
 public class ImageAdActivity extends BaseActivity {
     private ImageView adImg;
     private TextView skip;
-    private int time = 3;
+    private int time = 6;
 
 
     private Handler handler = new Handler() {
