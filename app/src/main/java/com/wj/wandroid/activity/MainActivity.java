@@ -1,5 +1,6 @@
 package com.wj.wandroid.activity;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.gyf.immersionbar.ImmersionBar;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.HomeFragmentPager;
 import com.wj.wandroid.base.BaseActivity;
@@ -17,6 +19,8 @@ import com.wj.wandroid.fragment.MyFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.functions.Consumer;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
@@ -33,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImmersionBar.with(this).barColor(R.color.red_primary).init();
         initView();
+        RxPermissions rxPermissions = new RxPermissions(this);
+        rxPermissions.request( Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                .subscribe(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean aBoolean) {
+                    }
+                });
         initData();
         setEvent();
     }
