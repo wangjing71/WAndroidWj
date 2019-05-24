@@ -62,11 +62,13 @@ public class ImageAdActivity extends BaseActivity {
                 int count = imageBean.getData().size();
                 if(count == 1){
                     String url = imageBean.getData().get(0).getImage_url();
+                    Log.i("====",url);
                     Glide.with(ImageAdActivity.this).load(url).into(adImg);
                 }else{
                     Random r=new Random();
                     int i1=r.nextInt(count-1);    //生成[0,10]区间的整数
                     String url = imageBean.getData().get(i1).getImage_url();
+                    Log.i("====",url);
                     Glide.with(ImageAdActivity.this).load(url).into(adImg);
                 }
             }
