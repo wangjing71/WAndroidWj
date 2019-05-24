@@ -55,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
     protected void initData() {
         titles.add("嫩萝莉");
         titles.add("长腿");
+        titles.add("丝袜");
         titles.add("小清新");
         titles.add("诱惑");
         titles.add("唯美");
         titles.add("长发");
         titles.add("泳装");
+        titles.add("美腿");
         titles.add("真人美女秀场");
         titles.add("性感");
         titles.add("气质");
