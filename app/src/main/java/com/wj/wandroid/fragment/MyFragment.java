@@ -100,20 +100,6 @@ public class MyFragment extends BaseLazyFragment {
                 refreshLayout.finishLoadMore();
             }
         });
-
-        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                manager.invalidateSpanAssignments();//防止第一行到顶部有空白
-            }
-        });
-
     }
 
     private void initHomeList() {
