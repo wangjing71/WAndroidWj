@@ -60,10 +60,15 @@ public class ImageAdActivity extends BaseActivity {
                 handler.sendEmptyMessageDelayed(0, 1000);
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 int count = imageBean.getData().size();
-                Random r=new Random();
-                int i1=r.nextInt(count-1);    //生成[0,10]区间的整数
-                String url = imageBean.getData().get(i1).getImage_url();
-                Glide.with(ImageAdActivity.this).load(url).into(adImg);
+                if(count == 1){
+                    String url = imageBean.getData().get(0).getImage_url();
+                    Glide.with(ImageAdActivity.this).load(url).into(adImg);
+                }else{
+                    Random r=new Random();
+                    int i1=r.nextInt(count-1);    //生成[0,10]区间的整数
+                    String url = imageBean.getData().get(i1).getImage_url();
+                    Glide.with(ImageAdActivity.this).load(url).into(adImg);
+                }
             }
 
             @Override
