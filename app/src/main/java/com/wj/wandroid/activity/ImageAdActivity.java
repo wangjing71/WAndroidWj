@@ -54,11 +54,11 @@ public class ImageAdActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        handler.sendEmptyMessageDelayed(0, 1000);
         String url = Constant.SPLASH_IMAGE.replaceAll("%number","0").replaceAll("%type","嫩萝莉");
         HttpRequestUtils.get(url, new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
-                handler.sendEmptyMessageDelayed(0, 1000);
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 int count = imageBean.getData().size();
                 Random r=new Random();
