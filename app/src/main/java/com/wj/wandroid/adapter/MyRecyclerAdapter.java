@@ -2,6 +2,7 @@ package com.wj.wandroid.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,10 +43,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        String url = dataList.get(position).getImage_url();
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.mipmap.ic_launcher);
-        Glide.with(mContext).load(dataList.get(position).getImage_url()).apply(options).into(holder.iv);
+        Glide.with(mContext).load(url).apply(options).into(holder.iv);
     }
 
     @Override
