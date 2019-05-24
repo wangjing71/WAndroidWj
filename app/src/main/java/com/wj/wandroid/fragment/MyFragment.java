@@ -3,8 +3,10 @@ package com.wj.wandroid.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SimpleItemAnimator;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -45,7 +47,7 @@ public class MyFragment extends BaseLazyFragment {
     private int pageIndex = 0;
     private String type ;
     private CircularProgressView circularProgressView;
-
+    private StaggeredGridLayoutManager manager;
 
     @Override
     public int setContentViewId() {
@@ -67,11 +69,14 @@ public class MyFragment extends BaseLazyFragment {
         if (getArguments() != null) {
             type =  getArguments().getString("type");
         }
-        StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         manager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         mRecyclerView.setLayoutManager(manager);
         myRecyclerAdapter = new MyRecyclerAdapter(getContext());
         myRecyclerAdapter.setDataList(dataList);
+        ((DefaultItemAnimator) mRecyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
+        ((SimpleItemAnimator) mRecyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
+        mRecyclerView.getItemAnimator().setChangeDuration(0);
         mRecyclerView.setAdapter(myRecyclerAdapter);
         initHomeList();
     }
@@ -95,6 +100,20 @@ public class MyFragment extends BaseLazyFragment {
                 refreshLayout.finishLoadMore();
             }
         });
+
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                manager.invalidateSpanAssignments();//防止第一行到顶部有空白
+            }
+        });
+
     }
 
     private void initHomeList() {
