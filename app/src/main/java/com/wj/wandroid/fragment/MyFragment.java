@@ -98,7 +98,6 @@ public class MyFragment extends Fragment {
             public void onSuccess(String result) {
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 List<ImageBean.DataBean> data = imageBean.getData();
-                Toast.makeText(getContext(), data.size()+"", Toast.LENGTH_SHORT).show();
                 dataList.addAll(data);
                 myRecyclerAdapter.notifyDataSetChanged();
                 pageIndex++;

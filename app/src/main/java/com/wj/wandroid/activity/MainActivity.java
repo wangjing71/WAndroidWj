@@ -14,7 +14,6 @@ import com.gyf.immersionbar.ImmersionBar;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.HomeFragmentPager;
-import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.fragment.MyFragment;
 
 import java.util.ArrayList;
