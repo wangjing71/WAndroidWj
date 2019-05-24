@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         titles.add("诱惑");
         titles.add("唯美");
         titles.add("长发");
+        titles.add("泳装");
         titles.add("性感");
         titles.add("气质");
         titles.add("可爱");
