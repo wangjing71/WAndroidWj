@@ -55,7 +55,7 @@ public class ImageAdActivity extends BaseActivity {
     @Override
     protected void initData() {
         String url = Constant.SPLASH_IMAGE.replaceAll("%number","0").replaceAll("%type","嫩萝莉");
-        HttpRequestUtils.get(Constant.SPLASH_IMAGE, new HttpRequestUtils.StringCallBack() {
+        HttpRequestUtils.get(url, new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
                 handler.sendEmptyMessageDelayed(0, 1000);
