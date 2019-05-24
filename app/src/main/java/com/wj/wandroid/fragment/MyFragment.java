@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -97,7 +98,13 @@ public class MyFragment extends Fragment {
             public void onSuccess(String result) {
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 List<ImageBean.DataBean> data = imageBean.getData();
-                dataList.addAll(data);
+                for (int i = 0; i < data.size(); i++) {
+                    ImageBean.DataBean bean = data.get(i);
+                    String url = bean.getImage_url();
+                    if(!TextUtils.isEmpty(url)){
+                        dataList.add(bean);
+                    }
+                }
                 myRecyclerAdapter.notifyDataSetChanged();
                 pageIndex++;
             }
