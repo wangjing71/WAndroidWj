@@ -34,11 +34,13 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        isPrepared = true;
         View view = inflater.inflate(setContentViewId(), null, false);
+        initView(view);
+        lazyLoad();
         return view;
     }
     public abstract int setContentViewId();
+    public abstract void initView(View root);
 
     private void lazyLoad() {
         if (getUserVisibleHint() && isPrepared && !isLazyLoaded) {
@@ -46,9 +48,11 @@ public abstract class BaseFragment extends Fragment {
             isLazyLoaded = true;
         }
     }
+    protected abstract void initData();
+    public void setEvent() { }
 
     private void onLazyLoad() {
-
-
+        initData();
+        setEvent();
     }
 }
