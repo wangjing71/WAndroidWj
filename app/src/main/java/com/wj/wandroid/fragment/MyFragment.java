@@ -34,7 +34,7 @@ import java.util.Random;
  * author: smile .
  * date: On 2018/5/30
  */
-public class MyFragment extends Fragment {
+public class MyFragment extends BaseFragment {
 
     private RecyclerView mRecyclerView;
     private SmartRefreshLayout refreshLayout;
@@ -44,21 +44,21 @@ public class MyFragment extends Fragment {
     private int pageIndex = 0;
     private String type ;
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tablayout,null,false);
-        initView(view);
-        initData();
-        setEvent();
-        return view;
+    public int setContentViewId() {
+        return R.layout.fragment_tablayout;
     }
 
-    private void initView(View root) {
+
+    @Override
+    public void initView(View root) {
         mRecyclerView = root.findViewById(R.id.recyclerView);
         refreshLayout = root.findViewById(R.id.refreshLayout);
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         if (getArguments() != null) {
             type =  getArguments().getString("type");
         }
@@ -71,7 +71,8 @@ public class MyFragment extends Fragment {
         initHomeList();
     }
 
-    private void setEvent() {
+    @Override
+    public void setEvent() {
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
