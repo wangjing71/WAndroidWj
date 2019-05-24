@@ -2,18 +2,35 @@
 <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/refreshLayout"
-    app:srlEnableOverScrollBounce="false"
-    app:srlEnableOverScrollDrag="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:srlEnableOverScrollBounce="false"
+    app:srlEnableOverScrollDrag="true">
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_marginLeft="@dimen/dp_2"
-        android:layout_marginRight="@dimen/dp_2"
-        android:id="@+id/recyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fadingEdge="none"
-        android:overScrollMode="never" />
+        android:layout_height="match_parent">
 
+        <com.github.rahatarmanahmed.cpv.CircularProgressView
+            android:id="@+id/progress_view"
+            android:layout_width="@dimen/dp_130"
+            android:layout_height="@dimen/dp_130"
+            app:cpv_animAutostart="true"
+            android:layout_marginTop="@dimen/dp_100"
+            android:layout_centerHorizontal="true"
+            app:cpv_color="@color/red_primary"
+            app:cpv_thickness="@dimen/dp_7"
+            app:cpv_indeterminate="true" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_marginRight="@dimen/dp_2"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 </com.scwang.smartrefresh.layout.SmartRefreshLayout>
