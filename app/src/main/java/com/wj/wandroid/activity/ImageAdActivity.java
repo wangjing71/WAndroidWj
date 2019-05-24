@@ -54,23 +54,17 @@ public class ImageAdActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        String url = Constant.SPLASH_IMAGE.replaceAll("%number","0").replaceAll("%type","嫩萝莉");
         HttpRequestUtils.get(Constant.SPLASH_IMAGE, new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
                 handler.sendEmptyMessageDelayed(0, 1000);
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 int count = imageBean.getData().size();
-                if(count == 1){
-                    String url = imageBean.getData().get(0).getImage_url();
-                    Log.i("====",url);
-                    Glide.with(ImageAdActivity.this).load(url).into(adImg);
-                }else{
-                    Random r=new Random();
-                    int i1=r.nextInt(count-1);    //生成[0,10]区间的整数
-                    String url = imageBean.getData().get(i1).getImage_url();
-                    Log.i("====",url);
-                    Glide.with(ImageAdActivity.this).load(url).into(adImg);
-                }
+                Random r=new Random();
+                int i1=r.nextInt(count-1);    //生成[0,10]区间的整数
+                String url = imageBean.getData().get(i1).getImage_url();
+                Glide.with(ImageAdActivity.this).load(url).into(adImg);
             }
 
             @Override

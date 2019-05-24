@@ -92,7 +92,6 @@ public class MyFragment extends Fragment {
 
     private void initHomeList() {
         String url = Constant.SPLASH_IMAGE.replaceAll("%number",pageIndex+"").replaceAll("%type",type);
-        Log.i("====",url);
         HttpRequestUtils.get(url, new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
