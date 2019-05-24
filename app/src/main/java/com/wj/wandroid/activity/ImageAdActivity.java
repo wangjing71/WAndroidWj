@@ -25,7 +25,7 @@ import java.util.Random;
 public class ImageAdActivity extends BaseActivity {
     private ImageView adImg;
     private TextView skip;
-    private int time = 6;
+    private int time = 4;
 
 
     private Handler handler = new Handler() {

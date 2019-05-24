@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.gson.Gson;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -43,6 +44,7 @@ public class MyFragment extends BaseLazyFragment {
     private MyRecyclerAdapter myRecyclerAdapter;
     private int pageIndex = 0;
     private String type ;
+    private CircularProgressView circularProgressView;
 
 
     @Override
@@ -55,6 +57,9 @@ public class MyFragment extends BaseLazyFragment {
     public void initView(View root) {
         mRecyclerView = root.findViewById(R.id.recyclerView);
         refreshLayout = root.findViewById(R.id.refreshLayout);
+        circularProgressView = root.findViewById(R.id.progress_view);
+
+        refreshLayout.setPrimaryColorsId(R.color.red_primary, android.R.color.white);
     }
 
     @Override
@@ -97,6 +102,8 @@ public class MyFragment extends BaseLazyFragment {
         HttpRequestUtils.get(url, new HttpRequestUtils.StringCallBack() {
             @Override
             public void onSuccess(String result) {
+                circularProgressView.setVisibility(View.GONE);
+                mRecyclerView.setVisibility(View.VISIBLE);
                 ImageBean imageBean = gson.fromJson(result,ImageBean.class);
                 List<ImageBean.DataBean> data = imageBean.getData();
                 for (int i = 0; i < data.size(); i++) {
