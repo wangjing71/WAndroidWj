@@ -34,7 +34,7 @@ import java.util.Random;
  * author: smile .
  * date: On 2018/5/30
  */
-public class MyFragment extends BaseFragment {
+public class MyFragment extends BaseLazyFragment {
 
     private RecyclerView mRecyclerView;
     private SmartRefreshLayout refreshLayout;
