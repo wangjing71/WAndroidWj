@@ -14,10 +14,10 @@
         app:cardCornerRadius="@dimen/dp_3">
 
         <ImageView
+            android:scaleType="fitXY"
             android:id="@+id/iv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
             android:src="@mipmap/ic_launcher" />
 
     </android.support.v7.widget.CardView>

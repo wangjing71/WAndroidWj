@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -44,16 +45,23 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        ImageBean.DataBean item = dataList.get(position);
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        final ImageBean.DataBean item = dataList.get(position);
         String url = item.getImage_url();
-        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) holder.iv.getLayoutParams();
-        params.height = params.width * item.getImage_height() /item.getImage_width();
-        holder.iv.setLayoutParams(params);
+
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.mipmap.ic_launcher);
         Glide.with(mContext).load(url).apply(options).into(holder.iv);
+        holder.iv.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                ViewGroup.LayoutParams params = holder.iv.getLayoutParams();
+                params.height = holder.iv.getWidth() * item.getImage_height() /item.getImage_width();
+                params.width = holder.iv.getWidth();
+                holder.iv.setLayoutParams(params);
+            }
+        });
     }
 
     @Override
