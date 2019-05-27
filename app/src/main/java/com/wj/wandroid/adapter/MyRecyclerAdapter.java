@@ -71,17 +71,17 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
                 holder.iv.setLayoutParams(params);
             }
         });
-        holder.iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Drawable drawable = holder.iv.getDrawable();
-                try {
-                    WallpaperManager.getInstance(mContext).setBitmap(drawable2Bitmap(drawable));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+//        holder.iv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Drawable drawable = holder.iv.getDrawable();
+//                try {
+//                    WallpaperManager.getInstance(mContext).setBitmap(drawable2Bitmap(drawable));
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
     }
 
     @Override
