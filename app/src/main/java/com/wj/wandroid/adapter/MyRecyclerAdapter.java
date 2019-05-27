@@ -47,13 +47,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, int position) {
         ImageBean.DataBean item = dataList.get(position);
         String url = item.getImage_url();
-//        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) holder.iv.getLayoutParams();
-//        params.height = item.getImage_height();
-//        params.width = item.getImage_width();
-//        holder.iv.setLayoutParams(params);
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) holder.iv.getLayoutParams();
+        params.height = params.width * item.getImage_height() /item.getImage_width();
+        holder.iv.setLayoutParams(params);
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .override(item.getImage_width(),item.getImage_height())
                 .placeholder(R.mipmap.ic_launcher);
         Glide.with(mContext).load(url).apply(options).into(holder.iv);
     }
