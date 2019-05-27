@@ -53,6 +53,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 //        holder.iv.setLayoutParams(params);
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .override(item.getImage_width(),item.getImage_height())
                 .placeholder(R.mipmap.ic_launcher);
         Glide.with(mContext).load(url).apply(options).into(holder.iv);
     }
