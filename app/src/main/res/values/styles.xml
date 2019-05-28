@@ -12,6 +12,13 @@
 </style>
 
     <style name="MySplash" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@mipmap/loading1</item>/
+        <item name="android:windowFullscreen">true</item>/
+        <!--<item name="android:windowAnimationStyle">@style/Animation.Activity.Splash</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+    </style>
+
+    <style name="MyHome" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>/
         <!--<item name="android:windowAnimationStyle">@style/Animation.Activity.Splash</item>-->
         <!--<item name="android:windowIsTranslucent">true</item>-->
