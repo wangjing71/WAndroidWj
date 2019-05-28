@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImmersionBar.with(this).barColor(R.color.red_primary).init();
+//        ImmersionBar.with(this).barColor(R.color.red_primary).init();
+        ImmersionBar.with(this).init();
         initView();
         RxPermissions rxPermissions = new RxPermissions(this);
         rxPermissions.request( Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initView() {
+        ImmersionBar.setStatusBarView(this, findViewById(R.id.barView));
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mTabLayout = (TabLayout) findViewById(R.id.tablayout);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
