@@ -9,7 +9,7 @@
     </style>
 
     <style name="MyApp" parent="@style/Theme.AppCompat.Light.NoActionBar">
-    </style>
+</style>
 
     <style name="MySplash" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@mipmap/loading1</item>/
