@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImmersionBar.with(this).init();
         ImmersionBar.setStatusBarView(this, findViewById(R.id.barView));
+        ImmersionBar.setStatusBarView(this, findViewById(R.id.barView1));
         initView();
         RxPermissions rxPermissions = new RxPermissions(this);
         rxPermissions.request( Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
