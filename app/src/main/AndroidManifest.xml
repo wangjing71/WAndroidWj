@@ -18,7 +18,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/MyApp">
-        <activity android:name="com.wj.wandroid.activity.MainActivity"
+        <activity android:name="com.wj.wandroid.activity.ImageAdActivity"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@style/MySplash">
@@ -29,7 +29,8 @@
             </intent-filter>
         </activity>
 
-        <!--<activity android:name=".activity.MainActivity"/>-->
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/MySplash"/>
         <activity android:name=".activity.WebActivity"/>
     </application>
 
