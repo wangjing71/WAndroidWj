@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private List<String> titles = new ArrayList<String>();
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initView() {
-        ImmersionBar.setStatusBarView(this, findViewById(R.id.barView));
+//        ImmersionBar.setStatusBarView(this, findViewById(R.id.barView));
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mTabLayout = (TabLayout) findViewById(R.id.tablayout);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
