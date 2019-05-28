@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -76,6 +77,19 @@ public class ImageAdActivity extends BaseActivity {
 
     @Override
     protected void setEvent() {
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startHomePage(false);
+            }
+        });
+
+        adImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startHomePage(false);
+            }
+        });
 
     }
 
