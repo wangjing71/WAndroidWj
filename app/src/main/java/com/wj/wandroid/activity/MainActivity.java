@@ -74,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
         titles.add("cosplay");
         titles.add("写真");
 
-        setSupportActionBar(mToolbar);
-        mActionbar = getSupportActionBar();
-        mActionbar.setTitle("享受美好生活");
+//        setSupportActionBar(mToolbar);
+//        mActionbar = getSupportActionBar();
+//        mActionbar.setTitle("");
         for (int i = 0; i < titles.size(); i++) {
             mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(i)));
         }
