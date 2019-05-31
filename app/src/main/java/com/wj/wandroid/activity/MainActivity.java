@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private List<String> titles = new ArrayList<String>();
+
+    private ImageView fenlei;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initView() {
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mTabLayout = (TabLayout) findViewById(R.id.tablayout);
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mToolbar =  findViewById(R.id.toolbar);
+        mTabLayout =  findViewById(R.id.tablayout);
+        mViewPager =  findViewById(R.id.viewpager);
+        fenlei =  findViewById(R.id.fenlei);
     }
 
     protected void initData() {
