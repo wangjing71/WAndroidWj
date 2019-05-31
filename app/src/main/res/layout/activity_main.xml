@@ -34,7 +34,7 @@
                         android:layout_gravity="center"
                         android:text="享受美好生活"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/sp_16" />
+                        android:textSize="@dimen/sp_18" />
                 </android.support.v7.widget.Toolbar>
 
                 <android.support.design.widget.TabLayout
