@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initData() {
+        titles.add("全部");
         titles.add("嫩萝莉");
         titles.add("长腿");
         titles.add("丝袜");
