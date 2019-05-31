@@ -47,12 +47,11 @@
 
                     <ImageView
                         android:id="@+id/menu"
-                        android:layout_marginRight="@dimen/dp_10"
                         android:padding="@dimen/dp_8"
                         android:layout_gravity="left"
                         android:src="@mipmap/menu"
-                        android:layout_width="@dimen/dp_35"
-                        android:layout_height="@dimen/dp_35" />
+                        android:layout_width="@dimen/dp_38"
+                        android:layout_height="@dimen/dp_38" />
                 </android.support.v7.widget.Toolbar>
 
                 <android.support.design.widget.TabLayout
