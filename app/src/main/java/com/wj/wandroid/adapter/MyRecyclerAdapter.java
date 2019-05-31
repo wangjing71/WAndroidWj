@@ -56,7 +56,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final ImageBean.DataBean item = dataList.get(position);
-        String url = item.getImage_url();
+        final String url = item.getImage_url();
 
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -71,17 +71,27 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
                 holder.iv.setLayoutParams(params);
             }
         });
-//        holder.iv.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
+        holder.iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 //                Drawable drawable = holder.iv.getDrawable();
 //                try {
 //                    WallpaperManager.getInstance(mContext).setBitmap(drawable2Bitmap(drawable));
 //                } catch (IOException e) {
 //                    e.printStackTrace();
 //                }
-//            }
-//        });
+            }
+        });
+
+        holder.iv.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(mContext, url, Toast.LENGTH_SHORT).show();
+
+
+                return false;
+            }
+        });
     }
 
     @Override
