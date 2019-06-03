@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private List<String> titles = new ArrayList<String>();
+    private TextView title;
 
 
     @Override
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initView() {
+        title = findViewById(R.id.title);
+        title.setText("享受美好生活");
         mTabLayout =  findViewById(R.id.tablayout);
         mViewPager =  findViewById(R.id.viewpager);
     }
