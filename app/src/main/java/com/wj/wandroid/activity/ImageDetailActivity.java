@@ -6,6 +6,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.ImageBean;
@@ -40,6 +43,10 @@ public class ImageDetailActivity extends BaseActivity {
         item = (ImageBean.DataBean) intent.getSerializableExtra("item");
 
         title.setText(item.getDesc());
+        RequestOptions options = new RequestOptions()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.mipmap.ic_launcher);
+        Glide.with(this).load(item.getImage_url()).apply(options).into(iv);
     }
 
     @Override
