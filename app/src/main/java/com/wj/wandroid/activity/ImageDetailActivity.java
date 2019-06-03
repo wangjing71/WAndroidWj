@@ -34,12 +34,6 @@ public class ImageDetailActivity extends BaseActivity {
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ActivityTransition.with(getIntent()).to(findViewById(R.id.image)).start(savedInstanceState);
-    }
-
-    @Override
     protected void initView() {
         title = findViewById(R.id.title);
         back = findViewById(R.id.title_bar_back);
