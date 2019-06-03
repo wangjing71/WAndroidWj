@@ -1,7 +1,5 @@
 package com.wj.wandroid.adapter;
 
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -58,6 +56,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.mipmap.ic_launcher);
+        Glide.with(mContext).load(url).apply(options).into(holder.iv);
         holder.iv.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -76,14 +75,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 //                } catch (IOException e) {
 //                    e.printStackTrace();
 //                }
+
+
                 Intent intent = new Intent(mContext, ImageDetailActivity.class);
                 intent.putExtra("item",item);
-
-                if (android.os.Build.VERSION.SDK_INT > 20) {
-                    mContext.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation((Activity) mContext, v, "transitionImg").toBundle());
-                } else {
-                    mContext.startActivity(intent);
-                }
+                mContext.startActivity(intent);
             }
         });
 
