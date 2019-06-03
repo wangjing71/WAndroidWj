@@ -52,9 +52,10 @@
             android:layout_marginBottom="@dimen/dp_5"
             android:layout_weight="1"
             android:gravity="center"
-            android:maxLength="15"
+            android:maxLength="13"
             android:maxLines="1"
             android:text="title"
+            android:ellipsize="end"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/sp_17" />
     </RelativeLayout>
