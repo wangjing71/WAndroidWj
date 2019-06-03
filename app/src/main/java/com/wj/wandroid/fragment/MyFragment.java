@@ -1,11 +1,13 @@
 package com.wj.wandroid.fragment;
 
 import android.support.annotation.NonNull;
+import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.dingmouren.layoutmanagergroup.viewpager.ViewPagerLayoutManager;
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.gson.Gson;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
