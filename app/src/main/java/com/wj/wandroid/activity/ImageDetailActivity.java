@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,6 +27,10 @@ public class ImageDetailActivity extends BaseActivity {
     private ImageBean.DataBean item;
     private LinearLayout back;
     private ImageView iv;
+    private Button save;
+    private Button share;
+    private Button wall;
+
     @Override
     protected int setLayoutId() {
         return R.layout.activity_image_detail;
@@ -36,6 +41,9 @@ public class ImageDetailActivity extends BaseActivity {
         title = findViewById(R.id.title);
         back = findViewById(R.id.title_bar_back);
         iv = findViewById(R.id.image);
+        save = findViewById(R.id.save);
+        share = findViewById(R.id.share);
+        wall = findViewById(R.id.wall);
     }
 
     @Override
@@ -58,6 +66,13 @@ public class ImageDetailActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        wall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
