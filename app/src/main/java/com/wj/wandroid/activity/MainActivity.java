@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private List<String> titles = new ArrayList<String>();
-    private TextView title;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initView() {
-        title = findViewById(R.id.title);
-        title.setText("享受美好生活");
         mTabLayout =  findViewById(R.id.tablayout);
         mViewPager =  findViewById(R.id.viewpager);
     }

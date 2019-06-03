@@ -1,5 +1,7 @@
 package com.wj.wandroid.activity;
 
+import android.widget.TextView;
+
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
 
@@ -9,6 +11,8 @@ import com.wj.wandroid.base.BaseActivity;
  * Description
  */
 public class ImageDetailActivity extends BaseActivity {
+    private TextView title;
+
     @Override
     protected int setLayoutId() {
         return R.layout.activity_image_detail;
@@ -16,7 +20,7 @@ public class ImageDetailActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        title = findViewById(R.id.title);
     }
 
     @Override
