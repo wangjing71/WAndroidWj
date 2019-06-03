@@ -28,6 +28,16 @@
                     android:layout_height="?attr/actionBarSize"
                     app:layout_scrollFlags="scroll|enterAlways">
 
+                    <ImageView
+                        android:id="@+id/menu"
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_35"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_14"
+                        android:padding="@dimen/dp_8"
+                        android:src="@mipmap/menu" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -46,16 +56,6 @@
                         android:layout_marginRight="@dimen/dp_12"
                         android:padding="@dimen/dp_10"
                         android:src="@mipmap/icon_shebei" />
-
-                    <ImageView
-                        android:id="@+id/menu"
-                        android:layout_width="@dimen/dp_35"
-                        android:layout_height="@dimen/dp_35"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/dp_14"
-                        android:padding="@dimen/dp_8"
-                        android:src="@mipmap/menu" />
 
                 </RelativeLayout>
 
