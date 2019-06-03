@@ -43,8 +43,8 @@
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:layout_gravity="right"
-                        android:layout_marginRight="@dimen/dp_14"
-                        android:padding="@dimen/dp_8"
+                        android:layout_marginRight="@dimen/dp_12"
+                        android:padding="@dimen/dp_10"
                         android:src="@mipmap/icon_shebei" />
 
                     <ImageView
@@ -54,7 +54,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/dp_14"
-                        android:padding="@dimen/dp_9"
+                        android:padding="@dimen/dp_8"
                         android:src="@mipmap/menu" />
 
                 </RelativeLayout>
