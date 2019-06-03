@@ -1,5 +1,7 @@
 package com.wj.wandroid.adapter;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
@@ -83,9 +85,15 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 //                    e.printStackTrace();
 //                }
 
+
                 Intent intent = new Intent(mContext, ImageDetailActivity.class);
                 intent.putExtra("item",item);
-                mContext.startActivity(intent);
+                if (android.os.Build.VERSION.SDK_INT > 20) {
+                    mContext.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,v,"transitionImg").toBundle());
+                } else {
+                    mContext.startActivity(intent);
+                }
+
             }
         });
 
