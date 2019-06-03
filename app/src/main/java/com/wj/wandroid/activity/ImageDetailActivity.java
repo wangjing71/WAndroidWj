@@ -1,6 +1,7 @@
 package com.wj.wandroid.activity;
 
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -41,8 +42,9 @@ public class ImageDetailActivity extends BaseActivity {
 
         Intent intent = getIntent();
         item = (ImageBean.DataBean) intent.getSerializableExtra("item");
-
-        title.setText(item.getDesc());
+        if(!TextUtils.isEmpty(item.getDesc())){
+            title.setText(item.getDesc());
+        }
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.mipmap.ic_launcher);
