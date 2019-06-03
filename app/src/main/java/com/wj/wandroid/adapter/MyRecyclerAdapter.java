@@ -1,7 +1,6 @@
 package com.wj.wandroid.adapter;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +26,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.kogitune.activity_transition.ActivityTransitionLauncher;
 import com.wj.wandroid.R;
 import com.wj.wandroid.activity.ImageDetailActivity;
 import com.wj.wandroid.bean.ImageBean;
@@ -88,12 +88,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
                 Intent intent = new Intent(mContext, ImageDetailActivity.class);
                 intent.putExtra("item",item);
-                if (android.os.Build.VERSION.SDK_INT > 20) {
-                    mContext.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,v,"transitionImg").toBundle());
-                } else {
-                    mContext.startActivity(intent);
-                }
-
+                ActivityTransitionLauncher.with((Activity) mContext).from(v).launch(intent);
             }
         });
 
