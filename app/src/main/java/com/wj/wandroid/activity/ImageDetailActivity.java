@@ -35,7 +35,6 @@ public class ImageDetailActivity extends BaseActivity {
     private TextView title;
     private ImageBean.DataBean item;
     private LinearLayout back;
-    private ImageView iv;
     private Button save;
     private Button share;
     private Button wall;
@@ -49,7 +48,6 @@ public class ImageDetailActivity extends BaseActivity {
     protected void initView() {
         title = findViewById(R.id.title);
         back = findViewById(R.id.title_bar_back);
-        iv = findViewById(R.id.image);
         save = findViewById(R.id.save);
         share = findViewById(R.id.share);
         wall = findViewById(R.id.wall);
@@ -63,10 +61,10 @@ public class ImageDetailActivity extends BaseActivity {
         if (!TextUtils.isEmpty(item.getDesc())) {
             title.setText(item.getDesc());
         }
-        RequestOptions options = new RequestOptions()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.mipmap.ic_launcher);
-        Glide.with(this).load(item.getImage_url()).apply(options).into(iv);
+//        RequestOptions options = new RequestOptions()
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .placeholder(R.mipmap.ic_launcher);
+//        Glide.with(this).load(item.getImage_url()).apply(options).into(iv);
     }
 
     @Override
@@ -78,17 +76,17 @@ public class ImageDetailActivity extends BaseActivity {
             }
         });
 
-        wall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Drawable drawable = iv.getDrawable();
-                try {
-                    WallpaperManager.getInstance(ImageDetailActivity.this).setBitmap(drawable2Bitmap(drawable));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+//        wall.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Drawable drawable = iv.getDrawable();
+//                try {
+//                    WallpaperManager.getInstance(ImageDetailActivity.this).setBitmap(drawable2Bitmap(drawable));
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
