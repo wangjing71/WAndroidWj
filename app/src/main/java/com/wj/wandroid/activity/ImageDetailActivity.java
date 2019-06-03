@@ -1,6 +1,13 @@
 package com.wj.wandroid.activity;
 
+import android.app.WallpaperManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.NinePatchDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -16,6 +23,8 @@ import com.bumptech.glide.request.RequestOptions;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.ImageBean;
+
+import java.io.IOException;
 
 /**
  * author wangjing
@@ -51,7 +60,7 @@ public class ImageDetailActivity extends BaseActivity {
 
         Intent intent = getIntent();
         item = (ImageBean.DataBean) intent.getSerializableExtra("item");
-        if(!TextUtils.isEmpty(item.getDesc())){
+        if (!TextUtils.isEmpty(item.getDesc())) {
             title.setText(item.getDesc());
         }
         RequestOptions options = new RequestOptions()
@@ -72,8 +81,48 @@ public class ImageDetailActivity extends BaseActivity {
         wall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Drawable drawable = iv.getDrawable();
+                try {
+                    WallpaperManager.getInstance(ImageDetailActivity.this).setBitmap(drawable2Bitmap(drawable));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+    }
+
+    public Bitmap drawable2Bitmap(Drawable drawable) {
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        } else if (drawable instanceof NinePatchDrawable) {
+            Bitmap bitmap = Bitmap
+                    .createBitmap(
+                            drawable.getIntrinsicWidth(),
+                            drawable.getIntrinsicHeight(),
+                            drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
+                                    : Bitmap.Config.RGB_565);
+            Canvas canvas = new Canvas(bitmap);
+            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
+                    drawable.getIntrinsicHeight());
+            drawable.draw(canvas);
+            return bitmap;
+        } else {
+            return null;
+        }
     }
 }
