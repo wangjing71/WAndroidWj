@@ -15,7 +15,7 @@
         android:layout_height="@dimen/dp_40">
 
         <LinearLayout
-            android:id="@+id/title_bar_layout_style3_11_left_back"
+            android:id="@+id/title_bar_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_10"
@@ -52,6 +52,7 @@
             android:layout_marginBottom="@dimen/dp_5"
             android:layout_weight="1"
             android:gravity="center"
+            android:maxLength="12"
             android:maxLines="1"
             android:text="title"
             android:textColor="#FFFFFF"

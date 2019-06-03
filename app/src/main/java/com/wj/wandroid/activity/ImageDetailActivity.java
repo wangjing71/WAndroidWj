@@ -1,6 +1,8 @@
 package com.wj.wandroid.activity;
 
 import android.content.Intent;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wj.wandroid.R;
@@ -15,6 +17,7 @@ import com.wj.wandroid.bean.ImageBean;
 public class ImageDetailActivity extends BaseActivity {
     private TextView title;
     private ImageBean.DataBean item;
+    private LinearLayout back;
 
     @Override
     protected int setLayoutId() {
@@ -24,6 +27,7 @@ public class ImageDetailActivity extends BaseActivity {
     @Override
     protected void initView() {
         title = findViewById(R.id.title);
+        back = findViewById(R.id.title_bar_back);
     }
 
     @Override
@@ -37,6 +41,11 @@ public class ImageDetailActivity extends BaseActivity {
 
     @Override
     protected void setEvent() {
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
