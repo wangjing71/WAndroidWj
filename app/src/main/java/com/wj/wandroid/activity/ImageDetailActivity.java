@@ -1,9 +1,11 @@
 package com.wj.wandroid.activity;
 
+import android.content.Intent;
 import android.widget.TextView;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
+import com.wj.wandroid.bean.ImageBean;
 
 /**
  * author wangjing
@@ -12,6 +14,7 @@ import com.wj.wandroid.base.BaseActivity;
  */
 public class ImageDetailActivity extends BaseActivity {
     private TextView title;
+    private ImageBean.DataBean item;
 
     @Override
     protected int setLayoutId() {
@@ -26,6 +29,10 @@ public class ImageDetailActivity extends BaseActivity {
     @Override
     protected void initData() {
 
+        Intent intent = getIntent();
+        item = (ImageBean.DataBean) intent.getSerializableExtra("item");
+
+        title.setText(item.getDesc());
     }
 
     @Override

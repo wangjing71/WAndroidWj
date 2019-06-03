@@ -16,6 +16,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:maxLines="1"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginBottom="@dimen/dp_5"
             android:id="@+id/title"
