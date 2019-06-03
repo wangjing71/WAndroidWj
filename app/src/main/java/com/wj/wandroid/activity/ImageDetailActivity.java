@@ -12,8 +12,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
-import com.kogitune.activity_transition.ActivityTransition;
-import com.kogitune.activity_transition.ExitActivityTransition;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.ImageBean;
