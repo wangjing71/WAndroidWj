@@ -1,5 +1,6 @@
 package com.wj.wandroid.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * Date 2019/5/23
  * Description
  */
-public class ImageBean {
+public class ImageBean implements Serializable {
 
     /**
      * tag1 : 美女
@@ -73,7 +74,7 @@ public class ImageBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
          * id : 21558403377
          * setId : 88314

@@ -2,6 +2,7 @@ package com.wj.wandroid.adapter;
 
 import android.app.WallpaperManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -25,6 +26,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.wj.wandroid.R;
+import com.wj.wandroid.activity.ImageDetailActivity;
 import com.wj.wandroid.bean.ImageBean;
 
 import java.io.IOException;
@@ -80,6 +82,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 //                } catch (IOException e) {
 //                    e.printStackTrace();
 //                }
+
+                Intent intent = new Intent(mContext, ImageDetailActivity.class);
+                intent.putExtra("item",item);
+                mContext.startActivity(intent);
             }
         });
 
