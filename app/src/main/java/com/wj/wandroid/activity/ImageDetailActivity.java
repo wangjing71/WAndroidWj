@@ -8,6 +8,7 @@ import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
@@ -18,18 +19,24 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.dingmouren.layoutmanagergroup.viewpager.ViewPagerLayoutManager;
+import com.liulishuo.filedownloader.BaseDownloadTask;
+import com.liulishuo.filedownloader.FileDownloadListener;
+import com.liulishuo.filedownloader.FileDownloader;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.MyRecyclerAdapter;
 import com.wj.wandroid.adapter.MyRecyclerAdapterDetail;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.ImageBean;
+import com.wj.wandroid.listener.SimpleFileDownloadListener;
 import com.wj.wandroid.util.GlideBlurformation;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -115,7 +122,7 @@ public class ImageDetailActivity extends BaseActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                saveImage();
             }
         });
 
@@ -142,6 +149,28 @@ public class ImageDetailActivity extends BaseActivity {
                 }
             }
         });
+
+    }
+
+    private void saveImage() {
+        FileDownloader.setup(this);
+        FileDownloader.getImpl().create(dataList.get(position).getDownload_url())
+                .setPath(Environment.getExternalStorageDirectory().getPath()+ File.separator+"11.apk")
+                .setListener(new SimpleFileDownloadListener(){
+                    @Override
+                    protected void connected(BaseDownloadTask task, String etag, boolean isContinue, int soFarBytes, int totalBytes) {
+                        Toast.makeText(ImageDetailActivity.this, "开始下载", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    protected void progress(BaseDownloadTask task, int soFarBytes, int totalBytes) {
+                    }
+
+                    @Override
+                    protected void completed(BaseDownloadTask task) {
+                        Toast.makeText(ImageDetailActivity.this, "下载完成", Toast.LENGTH_SHORT).show();
+                    }
+                }).start();
 
     }
 
