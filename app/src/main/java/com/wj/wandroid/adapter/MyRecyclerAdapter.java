@@ -82,8 +82,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
             @Override
             public boolean onLongClick(View v) {
                 Toast.makeText(mContext, url, Toast.LENGTH_SHORT).show();
-
-
                 return false;
             }
         });

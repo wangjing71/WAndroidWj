@@ -15,15 +15,20 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.dingmouren.layoutmanagergroup.viewpager.ViewPagerLayoutManager;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.MyRecyclerAdapter;
 import com.wj.wandroid.adapter.MyRecyclerAdapterDetail;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.ImageBean;
+import com.wj.wandroid.util.GlideBlurformation;
 
 import java.util.List;
 
@@ -43,6 +48,7 @@ public class ImageDetailActivity extends BaseActivity {
     private List<ImageBean.DataBean> dataList ;
     private MyRecyclerAdapterDetail myRecyclerAdapter;
     private int position;
+    private ImageView background;
 
     @Override
     protected int setLayoutId() {
@@ -57,6 +63,7 @@ public class ImageDetailActivity extends BaseActivity {
         share = findViewById(R.id.share);
         wall = findViewById(R.id.wall);
         recyclerView = findViewById(R.id.mRecyclerView);
+        background = findViewById(R.id.background);
     }
 
     @Override
@@ -77,6 +84,9 @@ public class ImageDetailActivity extends BaseActivity {
         myRecyclerAdapter.setDataList(dataList);
         recyclerView.setAdapter(myRecyclerAdapter);
         viewPagerLayoutManager.scrollToPosition(position);
+
+        Glide.with(this).load(dataList.get(position).getImage_url()).apply(RequestOptions.bitmapTransform(new GlideBlurformation(this))).into(background);
+
     }
 
     @Override
