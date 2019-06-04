@@ -133,10 +133,11 @@ public class ImageDetailActivity extends BaseActivity {
                     ViewPagerLayoutManager manager = (ViewPagerLayoutManager) recyclerView.getLayoutManager();
                     int lastVisibleItem = manager.findLastCompletelyVisibleItemPosition();
                     if (lastVisibleItem >= 0) {
+                        position = lastVisibleItem;
                         RequestOptions options = new RequestOptions()
                                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                                 .transform(new GlideBlurformation(ImageDetailActivity.this));
-                        Glide.with(ImageDetailActivity.this).load(dataList.get(lastVisibleItem).getImage_url()).apply(options).into(background);
+                        Glide.with(ImageDetailActivity.this).load(dataList.get(position).getImage_url()).apply(options).into(background);
                     }
                 }
             }
