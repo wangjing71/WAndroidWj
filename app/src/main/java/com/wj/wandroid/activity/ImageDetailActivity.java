@@ -55,7 +55,7 @@ public class ImageDetailActivity extends BaseActivity {
         save = findViewById(R.id.save);
         share = findViewById(R.id.share);
         wall = findViewById(R.id.wall);
-        recyclerView = findViewById(R.id.wall);
+        recyclerView = findViewById(R.id.mRecyclerView);
     }
 
     @Override
