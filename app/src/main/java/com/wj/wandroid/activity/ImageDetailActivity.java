@@ -84,8 +84,11 @@ public class ImageDetailActivity extends BaseActivity {
         myRecyclerAdapter.setDataList(dataList);
         recyclerView.setAdapter(myRecyclerAdapter);
         viewPagerLayoutManager.scrollToPosition(position);
+        RequestOptions options = new RequestOptions()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new GlideBlurformation(this));
 
-        Glide.with(this).load(dataList.get(position).getImage_url()).apply(RequestOptions.bitmapTransform(new GlideBlurformation(this))).into(background);
+        Glide.with(this).load(dataList.get(position).getImage_url()).apply(options).into(background);
 
     }
 
