@@ -40,6 +40,7 @@ public class ImageDetailActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private List<ImageBean.DataBean> dataList ;
     private MyRecyclerAdapterDetail myRecyclerAdapter;
+    private int position;
 
     @Override
     protected int setLayoutId() {
@@ -62,6 +63,8 @@ public class ImageDetailActivity extends BaseActivity {
         Intent intent = getIntent();
         item = (ImageBean.DataBean) intent.getSerializableExtra("item");
         dataList = (List<ImageBean.DataBean>) intent.getSerializableExtra("datas");
+        position = intent.getIntExtra("position",0);
+
         if (!TextUtils.isEmpty(item.getDesc())) {
             title.setText(item.getDesc());
         }
@@ -71,6 +74,7 @@ public class ImageDetailActivity extends BaseActivity {
         myRecyclerAdapter = new MyRecyclerAdapterDetail(this);
         myRecyclerAdapter.setDataList(dataList);
         recyclerView.setAdapter(myRecyclerAdapter);
+        viewPagerLayoutManager.scrollToPosition(position);
     }
 
     @Override

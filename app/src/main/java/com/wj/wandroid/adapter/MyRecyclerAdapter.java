@@ -50,7 +50,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         final ImageBean.DataBean item = dataList.get(position);
         final String url = item.getImage_url();
 
@@ -73,6 +73,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
                 Intent intent = new Intent(mContext, ImageDetailActivity.class);
                 intent.putExtra("datas", (Serializable) dataList);
                 intent.putExtra("item",item);
+                intent.putExtra("position",position);
                 mContext.startActivity(intent);
             }
         });
