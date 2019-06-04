@@ -205,7 +205,7 @@ public class ImageDetailActivity extends BaseActivity {
 
             }
         });
-        task.folder(Environment.getExternalStorageDirectory().getPath());
+        task.folder(Environment.getExternalStorageDirectory().getPath()+File.separator+"imageSave");
         task.start();
 
     }
