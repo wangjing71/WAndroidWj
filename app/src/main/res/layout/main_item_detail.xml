@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/dp_20"
-        app:cardCornerRadius="@dimen/dp_3">
+        android:elevation="@dimen/dp_50"
+        app:cardCornerRadius="@dimen/dp_5">
 
         <ImageView
             android:id="@+id/iv"
