@@ -155,7 +155,7 @@ public class ImageDetailActivity extends BaseActivity {
     private void saveImage() {
         FileDownloader.setup(this);
         FileDownloader.getImpl().create(dataList.get(position).getDownload_url())
-                .setPath(Environment.getExternalStorageDirectory().getPath()+ File.separator+"11.apk")
+                .setPath(Environment.getExternalStorageDirectory().getPath(),true)
                 .setListener(new SimpleFileDownloadListener(){
                     @Override
                     protected void connected(BaseDownloadTask task, String etag, boolean isContinue, int soFarBytes, int totalBytes) {
