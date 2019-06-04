@@ -60,24 +60,6 @@ public class MyRecyclerAdapterDetail extends RecyclerView.Adapter<MyRecyclerAdap
                 holder.iv.setLayoutParams(params);
             }
         });
-        holder.iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext, ImageDetailActivity.class);
-                intent.putExtra("item",item);
-                mContext.startActivity(intent);
-            }
-        });
-
-        holder.iv.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(mContext, url, Toast.LENGTH_SHORT).show();
-
-
-                return false;
-            }
-        });
     }
 
     @Override
