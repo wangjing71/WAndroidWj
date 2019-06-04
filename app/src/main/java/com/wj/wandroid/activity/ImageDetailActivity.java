@@ -45,7 +45,7 @@ public class ImageDetailActivity extends BaseActivity {
     private Button share;
     private Button wall;
     private RecyclerView recyclerView;
-    private List<ImageBean.DataBean> dataList ;
+    private List<ImageBean.DataBean> dataList;
     private MyRecyclerAdapterDetail myRecyclerAdapter;
     private int position;
     private ImageView background;
@@ -72,7 +72,7 @@ public class ImageDetailActivity extends BaseActivity {
         Intent intent = getIntent();
         item = (ImageBean.DataBean) intent.getSerializableExtra("item");
         dataList = (List<ImageBean.DataBean>) intent.getSerializableExtra("datas");
-        position = intent.getIntExtra("position",0);
+        position = intent.getIntExtra("position", 0);
 
         if (!TextUtils.isEmpty(item.getDesc())) {
             title.setText(item.getDesc());
@@ -87,7 +87,6 @@ public class ImageDetailActivity extends BaseActivity {
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .transform(new GlideBlurformation(this));
-
         Glide.with(this).load(dataList.get(position).getImage_url()).apply(options).into(background);
 
     }
@@ -130,13 +129,16 @@ public class ImageDetailActivity extends BaseActivity {
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                Log.i("====",newState+"");
-            }
-
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-//                Log.i("====dx",dx+"");
-//                Log.i("====dy",dy+"");
+                if (newState == 0) {
+                    ViewPagerLayoutManager manager = (ViewPagerLayoutManager) recyclerView.getLayoutManager();
+                    int lastVisibleItem = manager.findLastCompletelyVisibleItemPosition();
+                    if (lastVisibleItem >= 0) {
+                        RequestOptions options = new RequestOptions()
+                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                .transform(new GlideBlurformation(ImageDetailActivity.this));
+                        Glide.with(ImageDetailActivity.this).load(dataList.get(lastVisibleItem).getImage_url()).apply(options).into(background);
+                    }
+                }
             }
         });
 
