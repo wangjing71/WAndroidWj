@@ -8,26 +8,22 @@ import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.RequestOptions;
 import com.dingmouren.layoutmanagergroup.viewpager.ViewPagerLayoutManager;
 import com.wj.wandroid.R;
+import com.wj.wandroid.adapter.MyRecyclerAdapter;
+import com.wj.wandroid.adapter.MyRecyclerAdapterDetail;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.ImageBean;
 
-import java.io.IOException;
+import java.util.List;
 
 /**
  * author wangjing
@@ -42,6 +38,8 @@ public class ImageDetailActivity extends BaseActivity {
     private Button share;
     private Button wall;
     private RecyclerView recyclerView;
+    private List<ImageBean.DataBean> dataList ;
+    private MyRecyclerAdapterDetail myRecyclerAdapter;
 
     @Override
     protected int setLayoutId() {
@@ -63,11 +61,16 @@ public class ImageDetailActivity extends BaseActivity {
 
         Intent intent = getIntent();
         item = (ImageBean.DataBean) intent.getSerializableExtra("item");
+        dataList = (List<ImageBean.DataBean>) intent.getSerializableExtra("datas");
         if (!TextUtils.isEmpty(item.getDesc())) {
             title.setText(item.getDesc());
         }
 
         ViewPagerLayoutManager viewPagerLayoutManager = new ViewPagerLayoutManager(this, OrientationHelper.VERTICAL);
+        recyclerView.setLayoutManager(viewPagerLayoutManager);
+        myRecyclerAdapter = new MyRecyclerAdapterDetail(this);
+        myRecyclerAdapter.setDataList(dataList);
+        recyclerView.setAdapter(myRecyclerAdapter);
     }
 
     @Override

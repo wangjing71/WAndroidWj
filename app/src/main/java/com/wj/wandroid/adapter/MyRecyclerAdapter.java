@@ -23,6 +23,7 @@ import com.wj.wandroid.R;
 import com.wj.wandroid.activity.ImageDetailActivity;
 import com.wj.wandroid.bean.ImageBean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -70,6 +71,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ImageDetailActivity.class);
+                intent.putExtra("datas", (Serializable) dataList);
                 intent.putExtra("item",item);
                 mContext.startActivity(intent);
             }
