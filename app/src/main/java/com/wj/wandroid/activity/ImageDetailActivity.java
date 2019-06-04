@@ -147,6 +147,7 @@ public class ImageDetailActivity extends BaseActivity {
                     int lastVisibleItem = manager.findLastCompletelyVisibleItemPosition();
                     if (lastVisibleItem >= 0) {
                         position = lastVisibleItem;
+                        title.setText(dataList.get(position).getDesc());
                         RequestOptions options = new RequestOptions()
                                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                                 .transform(new GlideBlurformation(ImageDetailActivity.this));
@@ -188,6 +189,7 @@ public class ImageDetailActivity extends BaseActivity {
 
             @Override
             public void onProgress(Progress progress) {
+                Log.i("====",progress.fraction*100+" %");
             }
 
             @Override
