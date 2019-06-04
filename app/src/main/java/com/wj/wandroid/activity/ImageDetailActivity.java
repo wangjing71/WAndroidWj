@@ -10,6 +10,8 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.OrientationHelper;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.dingmouren.layoutmanagergroup.viewpager.ViewPagerLayoutManager;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.bean.ImageBean;
@@ -38,6 +41,7 @@ public class ImageDetailActivity extends BaseActivity {
     private Button save;
     private Button share;
     private Button wall;
+    private RecyclerView recyclerView;
 
     @Override
     protected int setLayoutId() {
@@ -51,6 +55,7 @@ public class ImageDetailActivity extends BaseActivity {
         save = findViewById(R.id.save);
         share = findViewById(R.id.share);
         wall = findViewById(R.id.wall);
+        recyclerView = findViewById(R.id.wall);
     }
 
     @Override
@@ -61,10 +66,8 @@ public class ImageDetailActivity extends BaseActivity {
         if (!TextUtils.isEmpty(item.getDesc())) {
             title.setText(item.getDesc());
         }
-//        RequestOptions options = new RequestOptions()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .placeholder(R.mipmap.ic_launcher);
-//        Glide.with(this).load(item.getImage_url()).apply(options).into(iv);
+
+        ViewPagerLayoutManager viewPagerLayoutManager = new ViewPagerLayoutManager(this, OrientationHelper.VERTICAL);
     }
 
     @Override
