@@ -28,6 +28,12 @@ import com.dingmouren.layoutmanagergroup.viewpager.ViewPagerLayoutManager;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadListener;
 import com.liulishuo.filedownloader.FileDownloader;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.model.Progress;
+import com.lzy.okgo.request.GetRequest;
+import com.lzy.okserver.OkDownload;
+import com.lzy.okserver.download.DownloadListener;
+import com.lzy.okserver.download.DownloadTask;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.MyRecyclerAdapter;
 import com.wj.wandroid.adapter.MyRecyclerAdapterDetail;
@@ -153,24 +159,54 @@ public class ImageDetailActivity extends BaseActivity {
     }
 
     private void saveImage() {
-        FileDownloader.setup(this);
-        FileDownloader.getImpl().create(dataList.get(position).getDownload_url())
-                .setPath(Environment.getExternalStorageDirectory().getPath(),true)
-                .setListener(new SimpleFileDownloadListener(){
-                    @Override
-                    protected void connected(BaseDownloadTask task, String etag, boolean isContinue, int soFarBytes, int totalBytes) {
-                        Toast.makeText(ImageDetailActivity.this, "开始下载", Toast.LENGTH_SHORT).show();
-                    }
+//        FileDownloader.setup(this);
+//        FileDownloader.getImpl().create(dataList.get(position).getDownload_url())
+//                .setPath(Environment.getExternalStorageDirectory().getPath(),false)
+//                .setListener(new SimpleFileDownloadListener(){
+//                    @Override
+//                    protected void connected(BaseDownloadTask task, String etag, boolean isContinue, int soFarBytes, int totalBytes) {
+//                        Toast.makeText(ImageDetailActivity.this, "开始下载", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    protected void progress(BaseDownloadTask task, int soFarBytes, int totalBytes) {
+//                    }
+//
+//                    @Override
+//                    protected void completed(BaseDownloadTask task) {
+//                        Toast.makeText(ImageDetailActivity.this, "下载完成", Toast.LENGTH_SHORT).show();
+//                    }
+//                }).start();
 
-                    @Override
-                    protected void progress(BaseDownloadTask task, int soFarBytes, int totalBytes) {
-                    }
+        String url = dataList.get(position).getDownload_url();
+        GetRequest<File> request = OkGo.get(url);
+        DownloadTask task = OkDownload.request(url, request).save().register(new DownloadListener(this) {
+            @Override
+            public void onStart(Progress progress) {
+                Toast.makeText(ImageDetailActivity.this, "开始下载", Toast.LENGTH_SHORT).show();
+            }
 
-                    @Override
-                    protected void completed(BaseDownloadTask task) {
-                        Toast.makeText(ImageDetailActivity.this, "下载完成", Toast.LENGTH_SHORT).show();
-                    }
-                }).start();
+            @Override
+            public void onProgress(Progress progress) {
+            }
+
+            @Override
+            public void onError(Progress progress) {
+                Toast.makeText(ImageDetailActivity.this, "下载失败", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFinish(File file, Progress progress) {
+                Toast.makeText(ImageDetailActivity.this, "下载完成", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRemove(Progress progress) {
+
+            }
+        });
+        task.folder(Environment.getExternalStorageDirectory().getPath());
+        task.start();
 
     }
 
