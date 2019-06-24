@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gyf.immersionbar.ImmersionBar;
+import com.wj.wandroid.R;
+
 public abstract class BaseLazyFragment extends Fragment {
     public Activity activity;
     private boolean isFragmentVisible;
@@ -31,6 +34,8 @@ public abstract class BaseLazyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         isFirstLoad = true;
         View view = View.inflate(activity, setContentViewId(), null);
+        View barView = view.findViewById(R.id.barView);
+        ImmersionBar.setStatusBarView(this, barView);
         isPrepared = true;
         initView(view);
         lazyLoad();
@@ -83,9 +88,11 @@ public abstract class BaseLazyFragment extends Fragment {
         isPrepared = false;
     }
 
-    public void initVariables(Bundle bundle) { }
+    public void initVariables(Bundle bundle) {
+    }
 
-    public void setEvent() { }
+    public void setEvent() {
+    }
 
     public abstract int setContentViewId();
 
