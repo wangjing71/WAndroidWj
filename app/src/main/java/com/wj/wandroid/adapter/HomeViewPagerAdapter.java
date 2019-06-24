@@ -10,12 +10,12 @@ import java.util.List;
  * author: smile .
  * date: On 2018/5/30
  */
-public class HomeFragmentPager extends FragmentStatePagerAdapter {
+public class HomeViewPagerAdapter extends FragmentStatePagerAdapter {
 
     List<Fragment> mFragments;
     List<String> mTitles;
 
-    public HomeFragmentPager(FragmentManager fm, List<Fragment> fragments, List<String> titles) {
+    public HomeViewPagerAdapter(FragmentManager fm, List<Fragment> fragments, List<String> titles) {
         super(fm);
         mFragments = fragments;
         mTitles = titles;
@@ -39,6 +39,10 @@ public class HomeFragmentPager extends FragmentStatePagerAdapter {
      */
     @Override
     public CharSequence getPageTitle(int position) {
-        return mTitles.get(position);
+        if (mTitles != null) {
+            return mTitles.get(position);
+        } else {
+            return super.getPageTitle(position);
+        }
     }
 }
