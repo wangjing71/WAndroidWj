@@ -28,7 +28,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager(), , );
+        for (int i = 0; i < 4; i++) {
+
+        }
+        homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager(), fragmentList);
     }
 
     @Override

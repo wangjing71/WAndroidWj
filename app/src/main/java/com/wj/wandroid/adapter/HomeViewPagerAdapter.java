@@ -21,6 +21,11 @@ public class HomeViewPagerAdapter extends FragmentStatePagerAdapter {
         mTitles = titles;
     }
 
+    public HomeViewPagerAdapter(FragmentManager fm, List<Fragment> fragments) {
+        super(fm);
+        mFragments = fragments;
+    }
+
     @Override
     public Fragment getItem(int position) {
         return mFragments.get(position);
