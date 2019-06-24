@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.HomeViewPagerAdapter;
 import com.wj.wandroid.base.BaseActivity;
+import com.wj.wandroid.fragment.HomePageFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class MainActivity extends BaseActivity {
     protected void initData() {
 
         for (int i = 0; i < 4; i++) {
-
+            fragmentList.add(new HomePageFragment());
         }
         homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager(), fragmentList);
     }

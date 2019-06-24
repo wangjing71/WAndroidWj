@@ -12,6 +12,9 @@ import com.wj.wandroid.base.BaseLazyFragment;
  */
 public class HomePageFragment extends BaseLazyFragment {
 
+    //需要无参构造方法
+    public HomePageFragment() {
+    }
 
     @Override
     public int setContentViewId() {
