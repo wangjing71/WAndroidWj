@@ -6,4 +6,6 @@ package com.wj.wandroid.fragment;
  * Description
  */
 public class HomePageFragment {
+
+
 }
