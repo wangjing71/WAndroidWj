@@ -13,11 +13,17 @@
         android:layout_gravity="center"
         android:layout_weight="1" />
 
-    <LinearLayout
-        android:id="@+id/activity_home_20180507_tabmenu"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal" />
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground">
 
+        <LinearLayout
+            android:id="@+id/activity_home_20180507_tabmenu"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" />
+    </android.support.design.widget.BottomNavigationView>
 </LinearLayout>
