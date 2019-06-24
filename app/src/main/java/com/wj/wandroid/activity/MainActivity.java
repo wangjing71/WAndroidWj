@@ -34,6 +34,7 @@ public class MainActivity extends BaseActivity {
             fragmentList.add(new HomePageFragment());
         }
         homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager(), fragmentList);
+        mViewPager.setAdapter(homeViewPagerAdapter);
     }
 
     @Override
