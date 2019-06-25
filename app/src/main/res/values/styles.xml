@@ -17,4 +17,10 @@
         <!--<item name="android:windowIsTranslucent">true</item>-->
     </style>
 
+    <style name="Theme.Splash" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@mipmap/loading1</item>/.
+        <!--<item name="android:windowAnimationStyle">@style/Animation.Activity.Splash</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+    </style>
+
 </resources>
