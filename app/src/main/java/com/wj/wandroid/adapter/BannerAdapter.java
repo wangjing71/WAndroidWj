@@ -18,13 +18,13 @@ import java.util.ArrayList;
  * Date 2018/12/20
  * Description
  */
-public class BannerPagerAdapter extends PagerAdapter {
+public class BannerAdapter extends PagerAdapter {
 
     private ArrayList<String> urlDatas;
     private Context context;
     private onBannerItemClick onBannerItemClick;
 
-    public BannerPagerAdapter(Context context, ArrayList<String> urlDatas) {
+    public BannerAdapter(Context context, ArrayList<String> urlDatas) {
         this.context = context;
         this.urlDatas = urlDatas;
     }
