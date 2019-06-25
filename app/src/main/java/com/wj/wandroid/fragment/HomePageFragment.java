@@ -37,6 +37,10 @@ public class HomePageFragment extends BaseLazyFragment {
 
     @Override
     protected void initData() {
+        testQBadgeView();
+    }
+
+    private void testQBadgeView() {
         //测试 BadgeView
         /*setBadgeNumber	设置Badge数字
         setBadgeText	设置Badge文本
