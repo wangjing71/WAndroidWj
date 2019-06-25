@@ -1,5 +1,6 @@
 package com.wj.wandroid.fragment;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,7 +38,7 @@ public class HomePageFragment extends BaseLazyFragment {
     @Override
     protected void initData() {
         //测试 BadgeView
-        new QBadgeView(getContext()).bindTarget(textView).setBadgeNumber(5);
+        new QBadgeView(getContext()).bindTarget(textView).setBadgeNumber(5).setBadgeBackgroundColor(Color.RED);
     }
 
     @Override
