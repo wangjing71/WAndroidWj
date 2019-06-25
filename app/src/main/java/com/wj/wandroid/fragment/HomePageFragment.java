@@ -2,10 +2,13 @@ package com.wj.wandroid.fragment;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseLazyFragment;
+
+import q.rorbin.badgeview.QBadgeView;
 
 /**
  * author wangjing
@@ -14,6 +17,7 @@ import com.wj.wandroid.base.BaseLazyFragment;
  */
 public class HomePageFragment extends BaseLazyFragment {
     private Button button;
+    private TextView textView;
 
     //需要无参构造方法
     public HomePageFragment() {
@@ -27,11 +31,13 @@ public class HomePageFragment extends BaseLazyFragment {
     @Override
     public void initView(View root) {
         button = root.findViewById(R.id.button);
+        textView = root.findViewById(R.id.textView);
     }
 
     @Override
     protected void initData() {
-
+        //测试 BadgeView
+        new QBadgeView(getContext()).bindTarget(textView).setBadgeNumber(5);
     }
 
     @Override
