@@ -56,7 +56,7 @@ public class HomePageFragment extends BaseLazyFragment {
         setOnDragStateChangedListener	打开拖拽消除模式并设置监听
         stroke	描边
         hide	隐藏Badge*/
-        new QBadgeView(getContext()).bindTarget(textView).setBadgeNumber(5).setBadgeBackgroundColor(Color.RED);
+        new QBadgeView(getContext()).bindTarget(textView).setBadgeText("+").setBadgeTextSize(15,true).setBadgeBackgroundColor(Color.RED);
     }
 
     @Override
