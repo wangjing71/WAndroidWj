@@ -14,6 +14,11 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        initOKGo();
+
+    }
+
+    private void initOKGo() {
         OkGo.getInstance().init(this);
     }
 }
