@@ -8,6 +8,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.wj.wandroid.R;
@@ -52,6 +53,14 @@ public class ImageAdActivity extends Activity {
         adImg = findViewById(R.id.ad_img);
         skip = findViewById(R.id.skip);
         skip.setText("跳过 " + time);
+        Intent intent = getIntent();
+        if(intent!=null){
+            String data = intent.getStringExtra("data");
+            Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
+        }
+
         handler.sendEmptyMessageDelayed(0, 1000);
     }
 
