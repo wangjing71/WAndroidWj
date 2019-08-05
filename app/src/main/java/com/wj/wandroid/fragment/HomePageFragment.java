@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wj.wandroid.R;
+import com.wj.wandroid.adapter.ActlistAdapter;
 import com.wj.wandroid.adapter.FastEnterAdapter;
 import com.wj.wandroid.base.BaseLazyFragment;
 import com.wj.wandroid.view.ViewPagerScroller;
@@ -36,6 +37,9 @@ public class HomePageFragment extends BaseLazyFragment {
 
     private RecyclerView fastEnterRecyclerView;
     private FastEnterAdapter fastEnterAdapter;
+
+    private RecyclerView actListRecyclerView;
+    private ActlistAdapter actlistAdapter;
 
     private Handler handler = new Handler(){
         @Override
@@ -60,6 +64,7 @@ public class HomePageFragment extends BaseLazyFragment {
     public void initView(View root) {
         banner = root.findViewById(R.id.id_banner);
         fastEnterRecyclerView = root.findViewById(R.id.fastEnter);
+        actListRecyclerView= root.findViewById(R.id.actList);
     }
 
     @Override
@@ -67,6 +72,16 @@ public class HomePageFragment extends BaseLazyFragment {
         initBanner();
 
         initFastEnter();
+
+        initActList();
+    }
+
+    private void initActList() {
+        actlistAdapter = new ActlistAdapter(getContext());
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2);
+        actListRecyclerView.setLayoutManager(gridLayoutManager);
+        actListRecyclerView.setAdapter(actlistAdapter);
+
     }
 
     private void initFastEnter() {
