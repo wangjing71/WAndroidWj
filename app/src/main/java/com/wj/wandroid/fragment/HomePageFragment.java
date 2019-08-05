@@ -36,8 +36,8 @@ public class HomePageFragment extends BaseLazyFragment {
 
     @Override
     protected void initData() {
-    }
 
+    }
 
     @Override
     public void setEvent() {
