@@ -2,6 +2,8 @@ package com.wj.wandroid.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.wj.wandroid.R;
@@ -43,6 +45,10 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initTabMenu() {
+        View items = LayoutInflater.from(this).inflate(R.layout.tab_menu_item, null, false);
+        for (int i = 0; i < 4; i++) {
+
+        }
     }
 
     private void initFragment() {
