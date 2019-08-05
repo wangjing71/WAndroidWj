@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wj.wandroid.R;
+import com.wj.wandroid.adapter.FastEnterAdapter;
 import com.wj.wandroid.base.BaseLazyFragment;
 import com.wj.wandroid.view.ViewPagerScroller;
 
@@ -33,6 +35,7 @@ public class HomePageFragment extends BaseLazyFragment {
     private int bannerIndex = 0;
 
     private RecyclerView fastEnterRecyclerView;
+    private FastEnterAdapter fastEnterAdapter;
 
     private Handler handler = new Handler(){
         @Override
@@ -61,6 +64,19 @@ public class HomePageFragment extends BaseLazyFragment {
 
     @Override
     protected void initData() {
+        initBanner();
+
+        initFastEnter();
+    }
+
+    private void initFastEnter() {
+        fastEnterAdapter = new FastEnterAdapter(getContext());
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),4);
+        fastEnterRecyclerView.setLayoutManager(gridLayoutManager);
+        fastEnterRecyclerView.setAdapter(fastEnterAdapter);
+    }
+
+    private void initBanner() {
         ViewPagerScroller scroller = new ViewPagerScroller(getContext());
         scroller.setScrollDuration(1500);
         scroller.initViewPagerScroll(banner);
