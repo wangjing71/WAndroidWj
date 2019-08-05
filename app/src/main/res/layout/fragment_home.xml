@@ -10,9 +10,13 @@
     <include layout="@layout/home_banner_layout" />
 
     <View
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_200"/>
 
-
+    <View
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"/>
 
 </LinearLayout>
