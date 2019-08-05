@@ -10,6 +10,7 @@
         android:orientation="vertical">
 
         <ImageView
+            android:layout_marginTop="@dimen/dp_5"
             android:id="@+id/focused_icon"
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
@@ -32,6 +33,7 @@
         android:orientation="vertical">
 
         <ImageView
+            android:layout_marginTop="@dimen/dp_5"
             android:id="@+id/default_icon"
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
