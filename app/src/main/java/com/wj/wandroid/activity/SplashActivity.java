@@ -2,9 +2,12 @@ package com.wj.wandroid.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.FragmentActivity;
 
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
 
@@ -16,7 +19,7 @@ import io.reactivex.functions.Consumer;
  * Date 2019/5/21
  * Description
  */
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends FragmentActivity {
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -27,17 +30,20 @@ public class SplashActivity extends BaseActivity {
     };
 
     @Override
-    protected int setLayoutId() {
-        return R.layout.activity_splash;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash);
+        initView();
+        initData();
+        setEvent();
     }
 
-    @Override
-    protected void initView() {
+    private void initView() {
 
     }
 
-    @Override
-    protected void initData() {
+    private void initData() {
+        RxPermissions rxPermissions = new RxPermissions(this);
         rxPermissions.request(Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)
                 .subscribe(new Consumer<Boolean>() {
@@ -48,8 +54,8 @@ public class SplashActivity extends BaseActivity {
                 });
     }
 
-    @Override
-    protected void setEvent() {
+    private void setEvent() {
 
     }
+
 }
