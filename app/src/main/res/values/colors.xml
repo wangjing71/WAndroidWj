@@ -217,5 +217,6 @@
     <color name="downLoadBackFocus">#FF6698E7</color>
     <color name="downLoadBackPressed">#FF3366CC</color>
     <color name="dialog_tiltle_blue">#2277BB</color>
+    <color name="blue_primy">#42A2F9</color>
 
 </resources>
