@@ -7,10 +7,7 @@
 
     <include layout="@layout/include_title_home" />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <include layout="@layout/home_banner_layout" />
 
 
 </LinearLayout>
