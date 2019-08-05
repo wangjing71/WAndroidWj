@@ -1,21 +1,13 @@
 package com.wj.wandroid.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.wj.wandroid.R;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * author wangjing
