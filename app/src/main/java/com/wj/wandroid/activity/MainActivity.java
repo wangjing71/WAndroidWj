@@ -27,6 +27,8 @@ public class MainActivity extends BaseActivity {
             new int[]{R.mipmap.home_def, R.mipmap.activity_def, R.mipmap.message_def, R.mipmap.mine_def};
     private int[] focusIconList =
             new int[]{R.mipmap.home_foc, R.mipmap.activity_foc, R.mipmap.message_foc, R.mipmap.mine_foc};
+    private String[] titleList =
+            new String[]{"首页","活动","消息","我的"};
     @Override
     protected int setLayoutId() {
         return R.layout.activity_main;
