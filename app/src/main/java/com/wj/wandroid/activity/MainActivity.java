@@ -32,6 +32,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        initTabMenu();
+        initFragment();
 
         for (int i = 0; i < 4; i++) {
             fragmentList.add(new HomePageFragment());
@@ -39,6 +41,13 @@ public class MainActivity extends BaseActivity {
         homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager(), fragmentList);
         mViewPager.setAdapter(homeViewPagerAdapter);
     }
+
+    private void initTabMenu() {
+    }
+
+    private void initFragment() {
+    }
+
 
     @Override
     protected void setEvent() {
