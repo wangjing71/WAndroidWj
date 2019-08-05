@@ -12,11 +12,13 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/fastEnter"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_160" />
+        android:layout_height="@dimen/dp_170" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -27,16 +29,20 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_margin="@dimen/dp_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_launcher" />
+                android:scaleType="fitXY"
+                android:src="@mipmap/act1" />
 
             <ImageView
+                android:layout_margin="@dimen/dp_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_launcher" />
+                android:scaleType="fitXY"
+                android:src="@mipmap/act2" />
         </LinearLayout>
 
         <LinearLayout
@@ -46,20 +52,22 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_margin="@dimen/dp_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_launcher" />
+                android:scaleType="fitXY"
+                android:src="@mipmap/act3" />
 
             <ImageView
+                android:layout_margin="@dimen/dp_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_launcher" />
+                android:scaleType="fitXY"
+                android:src="@mipmap/act4" />
 
         </LinearLayout>
-
-
     </LinearLayout>
 
 
