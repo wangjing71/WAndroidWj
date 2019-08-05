@@ -1,14 +1,19 @@
 package com.wj.wandroid.fragment;
 
 import android.graphics.Color;
+import android.support.annotation.NonNull;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseLazyFragment;
+
+import java.util.ArrayList;
 
 import q.rorbin.badgeview.QBadgeView;
 
@@ -19,6 +24,7 @@ import q.rorbin.badgeview.QBadgeView;
  */
 public class HomePageFragment extends BaseLazyFragment {
     private ViewPager banner;
+    private ArrayList<View> viewList = new ArrayList<>();
 
     //需要无参构造方法
     public HomePageFragment() {
@@ -36,10 +42,38 @@ public class HomePageFragment extends BaseLazyFragment {
 
     @Override
     protected void initData() {
+        for (int i = 0; i < 4; i++) {
 
+        }
     }
 
     @Override
     public void setEvent() {
+    }
+
+    class BannerAdapter extends PagerAdapter {
+
+        @NonNull
+        @Override
+        public Object instantiateItem(@NonNull ViewGroup container, final int position) {
+            View item = viewList.get(position);
+            container.addView(item);
+            return item;
+        }
+
+        @Override
+        public int getCount() {
+            return viewList.size();
+        }
+
+        @Override
+        public boolean isViewFromObject(@NonNull View view, @NonNull Object o) {
+            return view == o;
+        }
+
+        @Override
+        public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+            container.removeView((View) object);
+        }
     }
 }
