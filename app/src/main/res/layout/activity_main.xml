@@ -21,7 +21,7 @@
         android:background="?android:attr/windowBackground">
 
         <LinearLayout
-            android:id="@+id/activity_home_20180507_tabmenu"
+            android:id="@+id/tab_menu"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
             android:layout_alignParentBottom="true"
