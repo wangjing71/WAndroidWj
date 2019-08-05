@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity {
             ImageView focused_icon = items.findViewById(R.id.focused_icon);
             ImageView default_icon = items.findViewById(R.id.default_icon);
             Glide.with(this).load(defaultIconList[i]).into(focused_icon);
-            Glide.with(this).load(focusIconList[i]).into(focused_icon);
+            Glide.with(this).load(focusIconList[i]).into(default_icon);
             tabMenu.addView(items);
         }
     }
