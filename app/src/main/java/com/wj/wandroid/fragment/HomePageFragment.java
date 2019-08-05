@@ -20,7 +20,6 @@ import q.rorbin.badgeview.QBadgeView;
 public class HomePageFragment extends BaseLazyFragment {
     private ViewPager banner;
 
-
     //需要无参构造方法
     public HomePageFragment() {
     }
@@ -32,6 +31,7 @@ public class HomePageFragment extends BaseLazyFragment {
 
     @Override
     public void initView(View root) {
+        banner = root.findViewById(R.id.id_banner);
     }
 
     @Override
