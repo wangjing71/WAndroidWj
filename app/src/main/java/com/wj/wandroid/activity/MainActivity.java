@@ -57,6 +57,7 @@ public class MainActivity extends BaseActivity {
 
         homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager(), fragmentList);
         mViewPager.setAdapter(homeViewPagerAdapter);
+        mViewPager.setOffscreenPageLimit(4);
     }
 
     private void initTabMenu() {
