@@ -56,18 +56,14 @@ public class HomePageFragment extends BaseLazyFragment {
 
     @Override
     protected void initData() {
-        for (int i = 0; i < 4; i++) {
-            View page1 = LayoutInflater.from(getContext()).inflate(R.layout.home_banner_item,null,false);
-            viewList.add(page1);
-        }
         ViewPagerScroller scroller = new ViewPagerScroller(getContext());
         scroller.setScrollDuration(1500);
         scroller.initViewPagerScroll(banner);
         bannerIndex = viewList.size()*10;
         banner.setCurrentItem(bannerIndex);
         bannerAdapter = new BannerAdapter();
-//        banner.setAdapter(bannerAdapter);
-//        handler.sendEmptyMessageDelayed(0,1000);
+        banner.setAdapter(bannerAdapter);
+        handler.sendEmptyMessageDelayed(0,1000);
     }
 
     @Override
