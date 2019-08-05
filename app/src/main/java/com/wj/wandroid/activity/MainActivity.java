@@ -72,7 +72,7 @@ public class MainActivity extends BaseActivity {
             items.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    initBottonSelectIndex(i);
                 }
             });
         }
@@ -84,6 +84,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void setEvent() {
+
+    }
+
+    private void initBottonSelectIndex(int index) {
 
     }
 }
