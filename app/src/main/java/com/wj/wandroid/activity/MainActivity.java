@@ -69,10 +69,11 @@ public class MainActivity extends BaseActivity {
             Glide.with(this).load(focusIconList[i]).into(default_icon);
             tabMenu.addView(items);
 
+            final int finalI = i;
             items.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    initBottonSelectIndex(i);
+                    initBottonSelectIndex(finalI);
                 }
             });
         }
