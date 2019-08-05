@@ -68,6 +68,13 @@ public class MainActivity extends BaseActivity {
             Glide.with(this).load(defaultIconList[i]).into(focused_icon);
             Glide.with(this).load(focusIconList[i]).into(default_icon);
             tabMenu.addView(items);
+
+            items.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
     }
 
