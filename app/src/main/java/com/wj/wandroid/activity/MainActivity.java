@@ -13,6 +13,9 @@ import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.HomeViewPagerAdapter;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.fragment.HomePageFragment;
+import com.wj.wandroid.fragment.HomePageFragment1;
+import com.wj.wandroid.fragment.HomePageFragment2;
+import com.wj.wandroid.fragment.HomePageFragment3;
 import com.wj.wandroid.util.GlideUtil;
 
 import java.util.ArrayList;
@@ -46,9 +49,12 @@ public class MainActivity extends BaseActivity {
         initTabMenu();
         initFragment();
 
-        for (int i = 0; i < 4; i++) {
-            fragmentList.add(new HomePageFragment());
-        }
+        fragmentList.add(new HomePageFragment());
+        fragmentList.add(new HomePageFragment1());
+        fragmentList.add(new HomePageFragment2());
+        fragmentList.add(new HomePageFragment3());
+
+
         homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager(), fragmentList);
         mViewPager.setAdapter(homeViewPagerAdapter);
     }
