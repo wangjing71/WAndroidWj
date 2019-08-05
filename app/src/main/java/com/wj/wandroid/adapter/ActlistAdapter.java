@@ -36,7 +36,7 @@ public class ActlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemCount() {
-        return 8;
+        return 4;
     }
 
     class FastEnterHolder extends RecyclerView.ViewHolder {
