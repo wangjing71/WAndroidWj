@@ -1,15 +1,14 @@
 package com.wj.wandroid.fragment;
 
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseLazyFragment;
@@ -27,6 +26,14 @@ public class HomePageFragment extends BaseLazyFragment {
     private ViewPager banner;
     private ArrayList<View> viewList = new ArrayList<>();
     private BannerAdapter bannerAdapter;
+    private int bannerIndex = 0;
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            bannerIndex++;
+            banner.setCurrentItem(bannerIndex);
+        }
+    };
 
     //需要无参构造方法
     public HomePageFragment() {
@@ -48,8 +55,11 @@ public class HomePageFragment extends BaseLazyFragment {
             View page1 = LayoutInflater.from(getContext()).inflate(R.layout.home_banner_item,null,false);
             viewList.add(page1);
         }
+        bannerIndex = viewList.size()*10;
+        banner.setCurrentItem(bannerIndex);
         bannerAdapter = new BannerAdapter();
         banner.setAdapter(bannerAdapter);
+        handler.sendEmptyMessageDelayed(0,5000);
     }
 
     @Override
