@@ -23,7 +23,7 @@
         <LinearLayout
             android:id="@+id/tab_menu"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50"
+            android:layout_height="@dimen/dp_60"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal" />
     </android.support.design.widget.BottomNavigationView>
