@@ -1,6 +1,7 @@
 package com.wj.wandroid.fragment;
 
 import android.graphics.Color;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,8 +18,8 @@ import q.rorbin.badgeview.QBadgeView;
  * Description
  */
 public class HomePageFragment extends BaseLazyFragment {
-    private Button button;
-    private TextView textView;
+    private ViewPager banner;
+
 
     //需要无参构造方法
     public HomePageFragment() {
