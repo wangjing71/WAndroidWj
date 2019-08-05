@@ -32,6 +32,8 @@ public class HomePageFragment extends BaseLazyFragment {
         public void handleMessage(Message msg) {
             bannerIndex++;
             banner.setCurrentItem(bannerIndex);
+            handler.removeMessages(0);
+            handler.sendEmptyMessageDelayed(0,1000);
         }
     };
 
@@ -59,7 +61,7 @@ public class HomePageFragment extends BaseLazyFragment {
         banner.setCurrentItem(bannerIndex);
         bannerAdapter = new BannerAdapter();
         banner.setAdapter(bannerAdapter);
-        handler.sendEmptyMessageDelayed(0,5000);
+        handler.sendEmptyMessageDelayed(0,1000);
     }
 
     @Override
