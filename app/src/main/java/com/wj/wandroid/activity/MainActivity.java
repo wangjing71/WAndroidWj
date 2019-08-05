@@ -65,8 +65,8 @@ public class MainActivity extends BaseActivity {
             TextView default_title = items.findViewById(R.id.default_title);
             focused_title.setText(titleList[i]);
             default_title.setText(titleList[i]);
-            Glide.with(this).load(defaultIconList[i]).into(focused_icon);
-            Glide.with(this).load(focusIconList[i]).into(default_icon);
+            Glide.with(this).load(focusIconList[i]).into(focused_icon);
+            Glide.with(this).load(defaultIconList[i]).into(default_icon);
             tabMenu.addView(items);
 
             final int finalI = i;
