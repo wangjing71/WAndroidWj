@@ -76,6 +76,7 @@ public class MainActivity extends BaseActivity {
                     initBottonSelectIndex(finalI);
                 }
             });
+            initBottonSelectIndex(0);
         }
     }
 
