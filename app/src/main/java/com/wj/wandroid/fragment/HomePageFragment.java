@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseLazyFragment;
+import com.wj.wandroid.view.ViewPagerScroller;
 
 import java.util.ArrayList;
 
@@ -59,11 +60,14 @@ public class HomePageFragment extends BaseLazyFragment {
             View page1 = LayoutInflater.from(getContext()).inflate(R.layout.home_banner_item,null,false);
             viewList.add(page1);
         }
+        ViewPagerScroller scroller = new ViewPagerScroller(getContext());
+        scroller.setScrollDuration(1500);
+        scroller.initViewPagerScroll(banner);
         bannerIndex = viewList.size()*10;
         banner.setCurrentItem(bannerIndex);
         bannerAdapter = new BannerAdapter();
-        banner.setAdapter(bannerAdapter);
-        handler.sendEmptyMessageDelayed(0,1000);
+//        banner.setAdapter(bannerAdapter);
+//        handler.sendEmptyMessageDelayed(0,1000);
     }
 
     @Override
@@ -75,9 +79,9 @@ public class HomePageFragment extends BaseLazyFragment {
         @NonNull
         @Override
         public Object instantiateItem(@NonNull ViewGroup container, final int position) {
-            View item = viewList.get(position%viewList.size());
-            container.addView(item);
-            return item;
+            View page1 = LayoutInflater.from(getContext()).inflate(R.layout.home_banner_item,null,false);
+            container.addView(page1);
+            return page1;
         }
 
         @Override
