@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,9 @@ public class HomePageFragment extends BaseLazyFragment {
     private ArrayList<View> viewList = new ArrayList<>();
     private BannerAdapter bannerAdapter;
     private int bannerIndex = 0;
+
+    private RecyclerView fastEnterRecyclerView;
+
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -52,6 +56,7 @@ public class HomePageFragment extends BaseLazyFragment {
     @Override
     public void initView(View root) {
         banner = root.findViewById(R.id.id_banner);
+        fastEnterRecyclerView = root.findViewById(R.id.fastEnter);
     }
 
     @Override
