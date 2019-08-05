@@ -86,7 +86,22 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void setEvent() {
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
 
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                initBottonSelectIndex(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
     }
 
     private void initBottonSelectIndex(int index) {
