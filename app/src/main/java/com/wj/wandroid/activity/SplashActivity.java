@@ -1,6 +1,7 @@
 package com.wj.wandroid.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,6 +21,7 @@ import io.reactivex.functions.Consumer;
  * Description
  */
 public class SplashActivity extends FragmentActivity {
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -42,6 +44,7 @@ public class SplashActivity extends FragmentActivity {
 
     }
 
+    @SuppressLint("CheckResult")
     private void initData() {
         RxPermissions rxPermissions = new RxPermissions(this);
         rxPermissions.request(Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE,
