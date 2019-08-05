@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseActivity;
@@ -35,6 +36,8 @@ public class SplashActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        ImmersionBar.with(this).init();
+        ImmersionBar.setStatusBarView(this, findViewById(R.id.barView));
         initView();
         initData();
         setEvent();
