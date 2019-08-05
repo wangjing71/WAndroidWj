@@ -5,49 +5,51 @@
     android:clickable="true">
 
     <LinearLayout
+        android:id="@+id/focused_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_marginTop="@dimen/dp_5"
             android:id="@+id/focused_icon"
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
             android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_5"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:textColor="#42A2F8"
             android:id="@+id/focused_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="标题" />
+            android:text="标题"
+            android:textColor="#42A2F8" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/default_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_marginTop="@dimen/dp_5"
             android:id="@+id/default_icon"
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
             android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_5"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:textColor="#A9A9A9"
             android:id="@+id/default_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="标题" />
+            android:text="标题"
+            android:textColor="#A9A9A9" />
     </LinearLayout>
 </RelativeLayout>

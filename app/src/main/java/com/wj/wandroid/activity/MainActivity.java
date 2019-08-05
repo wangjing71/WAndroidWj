@@ -89,9 +89,17 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initBottonSelectIndex(int index) {
+        mViewPager.setCurrentItem(index, false);
         int count = tabMenu.getChildCount();
         for (int i = 0; i < count; i++) {
-
+            View itemsParents = tabMenu.getChildAt(i);
+            if(i == index){
+                itemsParents.findViewById(R.id.focused_parent).setVisibility(View.VISIBLE);
+                itemsParents.findViewById(R.id.default_parent).setVisibility(View.GONE);
+            }else{
+                itemsParents.findViewById(R.id.focused_parent).setVisibility(View.GONE);
+                itemsParents.findViewById(R.id.default_parent).setVisibility(View.VISIBLE);
+            }
         }
     }
 }
