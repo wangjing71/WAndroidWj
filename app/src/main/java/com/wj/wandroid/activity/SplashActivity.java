@@ -57,7 +57,7 @@ public class SplashActivity extends FragmentActivity {
                 .subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) {
-                        handler.sendEmptyMessageDelayed(0,2000);
+                        handler.sendEmptyMessageDelayed(0,0);
                     }
                 });
     }
