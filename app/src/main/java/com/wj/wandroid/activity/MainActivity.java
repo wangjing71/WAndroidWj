@@ -53,6 +53,9 @@ public class MainActivity extends BaseActivity {
     private void initTabMenu() {
         for (int i = 0; i < 4; i++) {
             View items = LayoutInflater.from(this).inflate(R.layout.tab_menu_item, null, false);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+            params.weight = 1;
+            items.setLayoutParams(params);
             ImageView focused_icon = items.findViewById(R.id.focused_icon);
             ImageView default_icon = items.findViewById(R.id.default_icon);
             Glide.with(this).load(defaultIconList[i]).into(focused_icon);
