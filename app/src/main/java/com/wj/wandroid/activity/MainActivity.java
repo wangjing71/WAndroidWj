@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.wj.wandroid.R;
@@ -60,6 +61,10 @@ public class MainActivity extends BaseActivity {
             items.setLayoutParams(params);
             ImageView focused_icon = items.findViewById(R.id.focused_icon);
             ImageView default_icon = items.findViewById(R.id.default_icon);
+            TextView focused_title = items.findViewById(R.id.focused_title);
+            TextView default_title = items.findViewById(R.id.default_title);
+            focused_title.setText(titleList[i]);
+            default_title.setText(titleList[i]);
             Glide.with(this).load(defaultIconList[i]).into(focused_icon);
             Glide.with(this).load(focusIconList[i]).into(default_icon);
             tabMenu.addView(items);
