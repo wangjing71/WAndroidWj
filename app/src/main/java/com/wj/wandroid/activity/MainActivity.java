@@ -89,6 +89,10 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initBottonSelectIndex(int index) {
+        int count = tabMenu.getChildCount();
+        for (int i = 0; i < count; i++) {
+
+        }
 
     }
 }
