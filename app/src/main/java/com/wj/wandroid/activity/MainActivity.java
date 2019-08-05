@@ -20,7 +20,10 @@ public class MainActivity extends BaseActivity {
     private HomeViewPagerAdapter homeViewPagerAdapter;
     private List<Fragment> fragmentList = new ArrayList<>();
     private LinearLayout tabMenu;
-
+    private int[] defaultIconList =
+            new int[]{R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
+    private int[] focusIconList =
+            new int[]{R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
     @Override
     protected int setLayoutId() {
         return R.layout.activity_main;
