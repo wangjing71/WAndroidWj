@@ -197,7 +197,7 @@
     <!-- 关于webview滑动 -->
 
     <!-- 主打蓝色 -->
-    <color name="blue_primary">#FF3390E8</color>
+    <color name="blue_primary">#42A2F9</color>
     <!-- 主打灰色 -->
     <color name="gray_primary">#FFEFEFEF</color>
     <color name="gray_f3f4f5">#fff3f4f5</color>
@@ -217,6 +217,5 @@
     <color name="downLoadBackFocus">#FF6698E7</color>
     <color name="downLoadBackPressed">#FF3366CC</color>
     <color name="dialog_tiltle_blue">#2277BB</color>
-    <color name="blue_primy">#42A2F9</color>
 
 </resources>
