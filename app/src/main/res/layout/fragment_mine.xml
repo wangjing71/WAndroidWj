@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srlEnableLoadMore="false"
     app:srlEnableOverScrollBounce="false"
     app:srlEnableOverScrollDrag="true"
-    app:srlEnableLoadMore="false"
-    app:srlEnableRefresh="false"
-    android:layout_height="match_parent">
+    app:srlEnableRefresh="false">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,20 +24,34 @@
                 android:scaleType="fitXY"
                 android:src="@mipmap/mine_back" />
 
-
-            <android.support.v7.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_160"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:layout_marginRight="@dimen/dp_20"
-                android:layout_marginBottom="@dimen/dp_5">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/barView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_160"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_5">
 
 
-            </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
         </RelativeLayout>
-
-
     </LinearLayout>
 </com.scwang.smartrefresh.layout.SmartRefreshLayout>

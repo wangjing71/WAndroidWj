@@ -2,6 +2,7 @@ package com.wj.wandroid.fragment;
 
 import android.view.View;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.wj.wandroid.R;
 import com.wj.wandroid.base.BaseLazyFragment;
 
@@ -18,7 +19,7 @@ public class MineFragment extends BaseLazyFragment {
 
     @Override
     public void initView(View root) {
-
+        ImmersionBar.setStatusBarView(this, root.findViewById(R.id.barView));
     }
 
     @Override
