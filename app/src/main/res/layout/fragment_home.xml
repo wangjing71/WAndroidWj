@@ -10,10 +10,10 @@
     <include layout="@layout/home_banner_layout" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_weight="523"
         android:id="@+id/fastEnter"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:layout_weight="523" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,23 +30,23 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_marginLeft="@dimen/dp_5"
-                android:layout_marginRight="@dimen/dp_2"
-                android:layout_marginTop="@dimen/dp_5"
-                android:layout_marginBottom="@dimen/dp_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_2"
+                android:layout_marginBottom="@dimen/dp_2"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:src="@mipmap/act1" />
 
             <ImageView
-                android:layout_marginLeft="@dimen/dp_2"
-                android:layout_marginRight="@dimen/dp_5"
-                android:layout_marginTop="@dimen/dp_5"
-                android:layout_marginBottom="@dimen/dp_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_2"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:src="@mipmap/act2" />
@@ -59,23 +59,23 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_marginLeft="@dimen/dp_5"
-                android:layout_marginRight="@dimen/dp_2"
-                android:layout_marginTop="@dimen/dp_2"
-                android:layout_marginBottom="@dimen/dp_10"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_2"
+                android:layout_marginRight="@dimen/dp_2"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:src="@mipmap/act3" />
 
             <ImageView
-                android:layout_marginLeft="@dimen/dp_2"
-                android:layout_marginRight="@dimen/dp_5"
-                android:layout_marginTop="@dimen/dp_2"
-                android:layout_marginBottom="@dimen/dp_10"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:layout_marginTop="@dimen/dp_2"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:src="@mipmap/act4" />
