@@ -10,16 +10,17 @@
     <include layout="@layout/home_banner_layout" />
 
     <android.support.v7.widget.RecyclerView
+        android:layout_weight="523"
         android:id="@+id/fastEnter"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_170" />
+        android:layout_height="0dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginLeft="@dimen/dp_5"
         android:layout_marginRight="@dimen/dp_5"
-        android:layout_weight="1"
+        android:layout_weight="677"
         android:orientation="vertical">
 
         <LinearLayout
