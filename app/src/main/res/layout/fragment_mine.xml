@@ -200,7 +200,7 @@
             <ImageView
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/seting_1"
                 android:layout_width="@dimen/dp_25"
                 android:layout_height="@dimen/dp_25" />
 
@@ -238,7 +238,7 @@
             <ImageView
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/setting_2"
                 android:layout_width="@dimen/dp_25"
                 android:layout_height="@dimen/dp_25" />
 
@@ -247,7 +247,7 @@
                 android:textSize="@dimen/sp_16"
                 android:textColor="#262626"
                 android:layout_gravity="center_vertical"
-                android:text="个人资料"
+                android:text="活动记录"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content" />
@@ -276,7 +276,7 @@
             <ImageView
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/setting_3"
                 android:layout_width="@dimen/dp_25"
                 android:layout_height="@dimen/dp_25" />
 
@@ -285,7 +285,7 @@
                 android:textSize="@dimen/sp_16"
                 android:textColor="#262626"
                 android:layout_gravity="center_vertical"
-                android:text="个人资料"
+                android:text="我的评价"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content" />
@@ -314,7 +314,7 @@
             <ImageView
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/setting_4"
                 android:layout_width="@dimen/dp_25"
                 android:layout_height="@dimen/dp_25" />
 
@@ -323,7 +323,7 @@
                 android:textSize="@dimen/sp_16"
                 android:textColor="#262626"
                 android:layout_gravity="center_vertical"
-                android:text="个人资料"
+                android:text="我的账单"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content" />
@@ -352,7 +352,7 @@
             <ImageView
                 android:layout_marginLeft="@dimen/dp_20"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/setting_5"
                 android:layout_width="@dimen/dp_25"
                 android:layout_height="@dimen/dp_25" />
 
@@ -361,7 +361,7 @@
                 android:textSize="@dimen/sp_16"
                 android:textColor="#262626"
                 android:layout_gravity="center_vertical"
-                android:text="个人资料"
+                android:text="设置"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content" />
