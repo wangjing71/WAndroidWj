@@ -22,7 +22,7 @@ public class MyApplication extends Application {
     }
 
     private void initBugly() {
-        CrashReport.initCrashReport(getApplicationContext(), "693d594dda", false);
+        CrashReport.initCrashReport(getApplicationContext(), "bf2285b85d", false);
     }
 
     private void initOKGo() {
