@@ -29,7 +29,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dp_5"
@@ -37,10 +37,11 @@
                 android:layout_marginRight="@dimen/dp_2"
                 android:layout_marginBottom="@dimen/dp_2"
                 android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@mipmap/act1" />
+                android:background="@mipmap/act1">
 
-            <ImageView
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dp_2"
@@ -48,8 +49,10 @@
                 android:layout_marginRight="@dimen/dp_5"
                 android:layout_marginBottom="@dimen/dp_2"
                 android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@mipmap/act2" />
+                android:background="@mipmap/act2">
+
+            </RelativeLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -58,7 +61,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dp_5"
@@ -66,10 +69,11 @@
                 android:layout_marginRight="@dimen/dp_2"
                 android:layout_marginBottom="@dimen/dp_10"
                 android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@mipmap/act3" />
+                android:background="@mipmap/act3">
 
-            <ImageView
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dp_2"
@@ -77,8 +81,10 @@
                 android:layout_marginRight="@dimen/dp_5"
                 android:layout_marginBottom="@dimen/dp_10"
                 android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@mipmap/act4" />
+                android:background="@mipmap/act4">
+
+            </RelativeLayout>
+
 
         </LinearLayout>
     </LinearLayout>
