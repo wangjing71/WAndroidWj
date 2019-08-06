@@ -18,8 +18,6 @@ import com.wj.wandroid.view.ViewPagerScroller;
 
 import java.util.ArrayList;
 
-import q.rorbin.badgeview.QBadgeView;
-
 /**
  * author wangjing
  * Date 2019/6/24
