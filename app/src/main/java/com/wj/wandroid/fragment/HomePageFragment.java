@@ -63,7 +63,6 @@ public class HomePageFragment extends BaseLazyFragment {
         initBanner();
 
         initFastEnter();
-
     }
 
 
@@ -87,6 +86,26 @@ public class HomePageFragment extends BaseLazyFragment {
 
     @Override
     public void setEvent() {
+        banner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                bannerIndex = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                if (state == 1) {
+                    handler.removeMessages(0);
+                } else if (state == 2) {
+                    handler.sendEmptyMessageDelayed(0, 5000);
+                }
+            }
+        });
     }
 
     class BannerAdapter extends PagerAdapter {
