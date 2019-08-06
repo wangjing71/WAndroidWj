@@ -20,7 +20,7 @@
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:textColor="#42A2F8"
+            android:textColor="#42a2f9"
             android:id="@+id/focused_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:textColor="#A9A9A9"
+            android:textColor="#a9a9a9"
             android:id="@+id/default_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
