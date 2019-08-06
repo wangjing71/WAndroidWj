@@ -113,7 +113,7 @@
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="自驾游"
+                        android:text="26°青春驿站"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/sp_18" />
 
@@ -123,7 +123,7 @@
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="上海周边自驾游"
+                        android:text="共享办公，娱乐"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/sp_14" />
 
@@ -146,7 +146,7 @@
                             android:paddingRight="@dimen/dp_10"
                             android:paddingBottom="@dimen/dp_5"
                             android:text="点击查看>>"
-                            android:textColor="#f9622e"
+                            android:textColor="#0ca6d8"
                             android:textSize="@dimen/sp_10" />
 
                     </RelativeLayout>
@@ -183,7 +183,7 @@
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="自驾游"
+                        android:text="周末去哪"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/sp_18" />
 
@@ -193,7 +193,7 @@
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="上海周边自驾游"
+                        android:text="打发周末时间"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/sp_14" />
 
@@ -216,7 +216,7 @@
                             android:paddingRight="@dimen/dp_10"
                             android:paddingBottom="@dimen/dp_5"
                             android:text="点击查看>>"
-                            android:textColor="#f9622e"
+                            android:textColor="#227fed"
                             android:textSize="@dimen/sp_10" />
 
                     </RelativeLayout>
@@ -245,7 +245,7 @@
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="自驾游"
+                        android:text="一起运动"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/sp_18" />
 
@@ -255,7 +255,7 @@
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="上海周边自驾游"
+                        android:text="羽毛球"
                         android:textColor="#ffffff"
                         android:textSize="@dimen/sp_14" />
 
@@ -278,7 +278,7 @@
                             android:paddingRight="@dimen/dp_10"
                             android:paddingBottom="@dimen/dp_5"
                             android:text="点击查看>>"
-                            android:textColor="#f9622e"
+                            android:textColor="#d0ca27"
                             android:textSize="@dimen/sp_10" />
 
                     </RelativeLayout>
