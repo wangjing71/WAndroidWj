@@ -10,6 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wj.wandroid.R;
+import com.wj.wandroid.base.FloorItemBean;
+
+import java.util.ArrayList;
 
 
 /**
@@ -20,6 +23,11 @@ import com.wj.wandroid.R;
 public class FastEnterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private int parentHeight;
+    private ArrayList<FloorItemBean> fastListData;
+
+    public void setFastListData(ArrayList<FloorItemBean> fastListData) {
+        this.fastListData = fastListData;
+    }
 
     public void setParentHeight(int parentHeight) {
         this.parentHeight = parentHeight;
@@ -46,7 +54,11 @@ public class FastEnterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemCount() {
-        return 8;
+        if(fastListData==null){
+            return 0;
+        }else{
+            return fastListData.size();
+        }
     }
 
     class FastEnterHolder extends RecyclerView.ViewHolder {

@@ -16,6 +16,7 @@ import android.view.ViewTreeObserver;
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.FastEnterAdapter;
 import com.wj.wandroid.base.BaseLazyFragment;
+import com.wj.wandroid.base.FloorItemBean;
 import com.wj.wandroid.view.ViewPagerScroller;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class HomePageFragment extends BaseLazyFragment {
 
     private RecyclerView fastEnterRecyclerView;
     private FastEnterAdapter fastEnterAdapter;
+    private ArrayList<FloorItemBean> fastListData = new ArrayList<>();
 
 
     private Handler handler = new Handler(){
@@ -69,6 +71,16 @@ public class HomePageFragment extends BaseLazyFragment {
 
 
     private void initFastEnter() {
+        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+
+
         fastEnterRecyclerView.post(new Runnable() {
             @Override
             public void run() {
