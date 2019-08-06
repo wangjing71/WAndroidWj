@@ -26,7 +26,7 @@ import java.util.ArrayList;
  * Date 2019/6/24
  * Description
  */
-public class HomePageFragment extends BaseLazyFragment {
+public class HomeFragment extends BaseLazyFragment {
     private ViewPager banner;
     private ArrayList<View> viewList = new ArrayList<>();
     private BannerAdapter bannerAdapter;
@@ -48,7 +48,7 @@ public class HomePageFragment extends BaseLazyFragment {
     };
 
     //需要无参构造方法
-    public HomePageFragment() {
+    public HomeFragment() {
     }
 
     @Override

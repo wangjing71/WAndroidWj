@@ -10,10 +10,10 @@ import com.wj.wandroid.base.BaseLazyFragment;
  * Date 2019/6/24
  * Description
  */
-public class HomePageFragment3 extends BaseLazyFragment {
+public class MineFragment extends BaseLazyFragment {
     @Override
     public int setContentViewId() {
-        return R.layout.fragment_home3;
+        return R.layout.fragment_mine;
     }
 
     @Override
