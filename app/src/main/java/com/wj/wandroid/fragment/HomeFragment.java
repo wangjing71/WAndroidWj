@@ -71,14 +71,14 @@ public class HomeFragment extends BaseLazyFragment {
 
 
     private void initFastEnter() {
-        fastListData.add(new FloorItemBean("自驾游",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("狼人杀",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("运动",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("KTV",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("徒步",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("附近",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("周末",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("优惠券",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("自驾游",R.mipmap.fast_1));
+        fastListData.add(new FloorItemBean("狼人杀",R.mipmap.fast_2));
+        fastListData.add(new FloorItemBean("运动",R.mipmap.fast_3));
+        fastListData.add(new FloorItemBean("KTV",R.mipmap.fast_4));
+        fastListData.add(new FloorItemBean("徒步",R.mipmap.fast_5));
+        fastListData.add(new FloorItemBean("附近",R.mipmap.fast_6));
+        fastListData.add(new FloorItemBean("周末",R.mipmap.fast_7));
+        fastListData.add(new FloorItemBean("优惠券",R.mipmap.fast_8));
 
 
         fastEnterRecyclerView.post(new Runnable() {
