@@ -52,6 +52,7 @@ public class FastEnterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         final FastEnterHolder fastEnterHolder = (FastEnterHolder) holder;
         FloorItemBean floorItemBean = fastListData.get(position);
         fastEnterHolder.tv_title.setText(floorItemBean.getTitle());
+        fastEnterHolder.iv_icon.setImageResource(floorItemBean.getIcon());
     }
 
     @Override
