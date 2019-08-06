@@ -7,9 +7,11 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
 import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.FastEnterAdapter;
@@ -67,10 +69,17 @@ public class HomePageFragment extends BaseLazyFragment {
 
 
     private void initFastEnter() {
+        fastEnterRecyclerView.post(new Runnable() {
+            @Override
+            public void run() {
+                Log.i("====",fastEnterRecyclerView.getHeight()+"");
+            }
+        });
         fastEnterAdapter = new FastEnterAdapter(getContext());
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),4);
         fastEnterRecyclerView.setLayoutManager(gridLayoutManager);
         fastEnterRecyclerView.setAdapter(fastEnterAdapter);
+        Log.i("====","2222");
     }
 
     private void initBanner() {
