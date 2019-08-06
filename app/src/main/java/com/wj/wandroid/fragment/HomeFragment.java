@@ -80,10 +80,16 @@ public class HomeFragment extends BaseLazyFragment {
         fastListData.add(new FloorItemBean("周末",R.mipmap.fast_7));
         fastListData.add(new FloorItemBean("优惠券",R.mipmap.fast_8));
 
-
-        fastEnterRecyclerView.post(new Runnable() {
+        fastEnterRecyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Log.i("====111",fastEnterRecyclerView.getHeight()+"");
+            }
+        });
+        fastEnterRecyclerView.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Log.i("====",fastEnterRecyclerView.getHeight()+"");
                 fastEnterAdapter = new FastEnterAdapter(getContext());
                 fastEnterAdapter.setParentHeight(fastEnterRecyclerView.getHeight());
                 fastEnterAdapter.setFastListData(fastListData);
@@ -91,7 +97,7 @@ public class HomeFragment extends BaseLazyFragment {
                 fastEnterRecyclerView.setLayoutManager(gridLayoutManager);
                 fastEnterRecyclerView.setAdapter(fastEnterAdapter);
             }
-        });
+        },200);
     }
 
     private void initBanner() {
