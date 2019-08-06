@@ -33,7 +33,9 @@ public class FastEnterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder viewHolder = null;
-        viewHolder = new FastEnterHolder(LayoutInflater.from(context).inflate(R.layout.fast_enter_item, parent, false));
+        View view = LayoutInflater.from(context).inflate(R.layout.fast_enter_item, parent, false);
+        view.getLayoutParams().height = parentHeight/2;
+        viewHolder = new FastEnterHolder(view);
         return viewHolder;
     }
 
