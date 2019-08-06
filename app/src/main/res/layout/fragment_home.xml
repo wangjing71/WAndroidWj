@@ -63,15 +63,23 @@
                         android:textColor="#ffffff"
                         android:textSize="@dimen/sp_14"
                         android:gravity="center" />
-                    <!-- TextView "" -->
-                    <TextView
+
+                    <RelativeLayout
                         android:layout_weight="2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/dp_20"
-                        android:text="点击查看>>"
-                        android:textColor="#f9622e"
-                        android:textSize="@dimen/sp_10"
-                        />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/background_round_1"
+                            android:layout_weight="2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_20"
+                            android:text="点击查看>>"
+                            android:textColor="#f9622e"
+                            android:textSize="@dimen/sp_10"/>
+
+                    </RelativeLayout>
 
                 </LinearLayout>
 
