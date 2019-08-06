@@ -71,14 +71,14 @@ public class HomePageFragment extends BaseLazyFragment {
 
 
     private void initFastEnter() {
-        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
-        fastListData.add(new FloorItemBean("",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("自驾游",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("狼人杀",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("运动",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("KTV",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("徒步",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("附近",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("周末",R.mipmap.ic_launcher));
+        fastListData.add(new FloorItemBean("优惠券",R.mipmap.ic_launcher));
 
 
         fastEnterRecyclerView.post(new Runnable() {

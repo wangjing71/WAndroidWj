@@ -49,7 +49,9 @@ public class FastEnterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        final FastEnterHolder addressKey = (FastEnterHolder) holder;
+        final FastEnterHolder fastEnterHolder = (FastEnterHolder) holder;
+        FloorItemBean floorItemBean = fastListData.get(position);
+        fastEnterHolder.tv_title.setText(floorItemBean.getTitle());
     }
 
     @Override
