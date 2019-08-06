@@ -5,6 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.wj.wandroid.R;
 
@@ -45,14 +48,15 @@ public class FastEnterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     class FastEnterHolder extends RecyclerView.ViewHolder {
+        ImageView iv_icon;
+        TextView tv_title;
+        LinearLayout parent;
 
         public FastEnterHolder(View view) {
             super(view);
+            iv_icon = view.findViewById(R.id.iv_icon);
+            tv_title = view.findViewById(R.id.tv_title);
+            parent = view.findViewById(R.id.parent);
         }
     }
-
-    interface onItemclickListener{
-        void itemClick(int position);
-    }
-
 }
