@@ -66,7 +66,7 @@ public class HomeFragment extends BaseLazyFragment {
     protected void initData() {
         initBanner();
 
-//        initFastEnter();
+        initFastEnter();
     }
 
 
