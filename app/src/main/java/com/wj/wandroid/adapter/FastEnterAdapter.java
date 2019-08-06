@@ -16,6 +16,11 @@ import com.wj.wandroid.R;
  */
 public class FastEnterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
+    private int parentHeight;
+
+    public void setParentHeight(int parentHeight) {
+        this.parentHeight = parentHeight;
+    }
 
     public FastEnterAdapter(Context context) {
         this.context = context;
