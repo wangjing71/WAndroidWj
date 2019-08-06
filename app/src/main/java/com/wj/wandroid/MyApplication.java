@@ -3,6 +3,7 @@ package com.wj.wandroid;
 import android.app.Application;
 
 import com.lzy.okgo.OkGo;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * author wangjing
@@ -16,6 +17,12 @@ public class MyApplication extends Application {
 
         initOKGo();
 
+        initBugly();
+
+    }
+
+    private void initBugly() {
+        CrashReport.initCrashReport(getApplicationContext(), "693d594dda", false);
     }
 
     private void initOKGo() {
