@@ -86,6 +86,7 @@ public class HomePageFragment extends BaseLazyFragment {
             public void run() {
                 fastEnterAdapter = new FastEnterAdapter(getContext());
                 fastEnterAdapter.setParentHeight(fastEnterRecyclerView.getHeight());
+                fastEnterAdapter.setFastListData(fastListData);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),4);
                 fastEnterRecyclerView.setLayoutManager(gridLayoutManager);
                 fastEnterRecyclerView.setAdapter(fastEnterAdapter);
