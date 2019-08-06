@@ -39,6 +39,38 @@
                 android:layout_weight="1"
                 android:background="@mipmap/act1">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="自驾游"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="上海周边自驾游"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                    <!-- TextView "" -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="点击查看>>"
+                        android:textColor="#f9622e"
+                        android:textSize="14sp"
+                        />
+
+                </LinearLayout>
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -51,6 +83,13 @@
                 android:layout_weight="1"
                 android:background="@mipmap/act2">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
             </RelativeLayout>
 
         </LinearLayout>
@@ -71,6 +110,13 @@
                 android:layout_weight="1"
                 android:background="@mipmap/act3">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
             </RelativeLayout>
 
             <RelativeLayout
@@ -83,6 +129,13 @@
                 android:layout_weight="1"
                 android:background="@mipmap/act4">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
             </RelativeLayout>
 
 
