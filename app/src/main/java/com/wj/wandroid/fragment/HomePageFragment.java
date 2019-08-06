@@ -73,13 +73,12 @@ public class HomePageFragment extends BaseLazyFragment {
             @Override
             public void run() {
                 Log.i("====",fastEnterRecyclerView.getHeight()+"");
+                fastEnterAdapter = new FastEnterAdapter(getContext());
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),4);
+                fastEnterRecyclerView.setLayoutManager(gridLayoutManager);
+                fastEnterRecyclerView.setAdapter(fastEnterAdapter);
             }
         });
-        fastEnterAdapter = new FastEnterAdapter(getContext());
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),4);
-        fastEnterRecyclerView.setLayoutManager(gridLayoutManager);
-        fastEnterRecyclerView.setAdapter(fastEnterAdapter);
-        Log.i("====","2222");
     }
 
     private void initBanner() {
