@@ -13,7 +13,7 @@ import com.wj.wandroid.R;
 import com.wj.wandroid.adapter.HomeViewPagerAdapter;
 import com.wj.wandroid.base.BaseActivity;
 import com.wj.wandroid.fragment.HomeFragment;
-import com.wj.wandroid.fragment.HomePageFragment1;
+import com.wj.wandroid.fragment.ActivityFragment;
 import com.wj.wandroid.fragment.HomePageFragment2;
 import com.wj.wandroid.fragment.MineFragment;
 
@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity {
         initFragment();
 
         fragmentList.add(new HomeFragment());
-        fragmentList.add(new HomePageFragment1());
+        fragmentList.add(new ActivityFragment());
         fragmentList.add(new HomePageFragment2());
         fragmentList.add(new MineFragment());
 
